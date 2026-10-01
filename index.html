@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adani University | Transforming India through Education & Innovation</title>
+  <meta name="description" content="Adani University is a premier institution offering AICTE-approved Polytechnic Diplomas, Undergraduate (B.Tech, B.Sc, BCA), and Postgraduate (MBA in Infrastructure, M.Tech) programs.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2338bdf8'><path d='M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 8.45L4.5 8 12 4.14 19.5 8 12 11.45zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z'/></svg>">
+  
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- ==========================================
+       SLEEK BLACK BACKGROUND STYLESHEET
+       ========================================== -->
+  <style>
+    :root {
+      --primary-900: #030712;
+      --primary-800: #0b1528;
+      --primary-700: #1d4ed8;
+      --primary-600: #2563eb;
+      --primary-500: #3b82f6;
+      --primary-100: #1e293b;
+      --accent-gold:   #fbbf24;
+      --accent-amber:  #f59e0b;
+      --accent-emerald:#10b981;
+      --accent-crimson:#ef4444;
+
+      /* PURE BLACK THEME PALETTE */
+      --bg-body:       #000000;
+      --bg-surface:    #0a0f1d;
+      --bg-surface-alt:#111827;
+      --bg-surface-elevated: #161f38;
+      --text-main:     #f8fafc;
+      --text-muted:    #94a3b8;
+      --text-light:    #64748b;
+      --border-color:  #1e293b;
+      --border-glow:   rgba(59, 130, 246, 0.35);
+
+      --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-display: 'Outfit', var(--font-sans);
+
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.6);
+      --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.8);
+      --shadow-xl: 0 20px 35px rgba(0, 0, 0, 0.9);
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-full: 9999px;
+      --transition: 0.25s ease;
+    }
+
+    [data-theme="light"] {
+      --bg-body:       #f8fafc;
+      --bg-surface:    #ffffff;
+      --bg-surface-alt:#f1f5f9;
+      --bg-surface-elevated: #ffffff;
+      --text-main:     #0f172a;
+      --text-muted:    #64748b;
+      --text-light:    #94a3b8;
+      --border-color:  #e2e8f0;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.65;
+      font-size: 16px;
+      transition: background-color var(--transition), color var(--transition);
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.25; color: var(--text-main); }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    img { max-width: 100%; height: auto; display: block; }
+    .text-center { text-align: center; }
+    .text-gradient {
+      background: linear-gradient(135deg, #fbbf24 0%, #38bdf8 50%, #60a5fa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section { padding: 80px 0; background-color: var(--bg-body); }
+    .section-header { text-align: center; max-width: 720px; margin: 0 auto 48px auto; }
+    .section-tag {
+      display: inline-block;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #60a5fa;
+      background: rgba(37, 99, 235, 0.18);
+      padding: 4px 14px;
+      border-radius: var(--radius-full);
+      margin-bottom: 12px;
+      border: 1px solid rgba(59, 130, 246, 0.25);
+    }
+    .section-title { font-size: clamp(2rem, 3.5vw, 2.75rem); margin-bottom: 12px; }
+    .section-subtitle { font-size: 1.0625rem; color: var(--text-muted); }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      border-radius: var(--radius-md);
+      border: none;
+      cursor: pointer;
+      transition: all var(--transition);
+      text-align: center;
+    }
+    .btn-primary { background: #1d4ed8; color: #fff; box-shadow: 0 4px 14px rgba(29, 78, 216, 0.4); }
+    .btn-primary:hover { background: #2563eb; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5); }
+    .btn-accent { background: linear-gradient(135deg, #d97706, #f59e0b); color: #fff; box-shadow: 0 4px 14px rgba(217, 119, 6, 0.4); }
+    .btn-accent:hover { background: linear-gradient(135deg, #b45309, #d97706); transform: translateY(-2px); }
+    .btn-outline-light { background: transparent; color: #fff; border: 1.5px solid rgba(255, 255, 255, 0.4); }
+    .btn-outline-light:hover { background: rgba(255, 255, 255, 0.15); border-color: #fff; }
+    .btn-ghost-light { background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid rgba(255, 255, 255, 0.2); }
+    .btn-ghost-light:hover { background: rgba(255, 255, 255, 0.18); }
+    .btn-sm { padding: 8px 16px; font-size: 0.8125rem; }
+    .btn-lg { padding: 15px 32px; font-size: 1.0625rem; }
+    .btn-block { width: 100%; }
+
+    /* Top Bar */
+    .top-bar {
+      background: #03060f;
+      color: #94a3b8;
+      font-size: 0.8125rem;
+      padding: 8px 0;
+      border-bottom: 1px solid #111827;
+    }
+    .top-bar-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .top-bar-links { display: flex; align-items: center; gap: 18px; }
+    .top-bar-links a:hover { color: #fff; }
+    .theme-toggle {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    [data-theme="dark"] .sun-icon { display: block; }
+    [data-theme="dark"] .moon-icon { display: none; }
+    [data-theme="light"] .sun-icon { display: none; }
+    [data-theme="light"] .moon-icon { display: block; }
+
+    /* Header & Navigation */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-color);
+      transition: all var(--transition);
+    }
+    [data-theme="light"] .site-header { background: rgba(255, 255, 255, 0.95); }
+    .header-container { display: flex; align-items: center; justify-content: space-between; height: 75px; }
+    .brand-logo { display: flex; align-items: center; gap: 12px; }
+    .logo-crest svg { width: 42px; height: 42px; border-radius: 8px; }
+    .brand-title { font-size: 1.45rem; font-weight: 800; color: #60a5fa; letter-spacing: -0.02em; }
+    .brand-sub { font-size: 0.75rem; font-weight: 600; color: var(--text-main); display: block; }
+    .brand-tag { font-size: 0.65rem; color: var(--text-muted); display: block; }
+
+    .nav-list { display: flex; align-items: center; gap: 6px; }
+    .nav-link {
+      padding: 8px 12px;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--text-main);
+      border-radius: var(--radius-sm);
+      transition: all var(--transition);
+    }
+    .nav-link:hover, .nav-link.active { color: #60a5fa; background: var(--bg-surface-alt); }
+
+    /* Hero */
+    .hero-section {
+      position: relative;
+      background: #000000 url('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1920&q=80') center/cover;
+      color: #fff;
+      padding: 90px 0 100px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 20%, rgba(29, 78, 216, 0.25) 0%, transparent 60%),
+                  linear-gradient(135deg, rgba(0, 0, 0, 0.97) 0%, rgba(5, 10, 20, 0.92) 100%);
+    }
+    .hero-container {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.35fr 0.9fr;
+      gap: 45px;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .pulse-dot { width: 8px; height: 8px; background: #10b981; border-radius: 50%; box-shadow: 0 0 10px #10b981; }
+    .hero-title { font-size: clamp(2.4rem, 4.5vw, 3.6rem); font-weight: 800; line-height: 1.15; margin-bottom: 18px; }
+    .hero-desc { font-size: 1.0625rem; color: #cbd5e1; margin-bottom: 28px; max-width: 600px; }
+
+    .hero-search-form {
+      display: flex;
+      align-items: center;
+      background: rgba(17, 24, 39, 0.95);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 6px 6px 6px 14px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+      max-width: 540px;
+      margin-bottom: 28px;
+    }
+    .hero-search-form input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 0.9375rem;
+      color: #ffffff;
+      background: transparent;
+    }
+    .hero-search-form input::placeholder { color: #64748b; }
+    .hero-cta-group { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 35px; }
+
+    .hero-kpis {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding-top: 22px;
+    }
+    .kpi-number { font-family: var(--font-display); font-size: 1.625rem; font-weight: 800; color: #38bdf8; display: block; }
+    .kpi-label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; }
+
+    .hero-aside-card {
+      background: var(--bg-surface);
+      color: var(--text-main);
+      padding: 30px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      border: 1px solid var(--border-color);
+    }
+    .live-indicator { font-size: 0.75rem; font-weight: 700; color: var(--accent-amber); margin-bottom: 8px; }
+    .form-group { margin-bottom: 14px; }
+    .form-control {
+      width: 100%;
+      padding: 11px 14px;
+      font-size: 0.9375rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--border-color);
+      background: var(--bg-surface-alt);
+      color: var(--text-main);
+      outline: none;
+    }
+    .form-control:focus { border-color: var(--primary-500); box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25); }
+
+    /* News Marquee */
+    .notices-ticker-section { background: #030712; border-bottom: 1px solid var(--border-color); padding: 10px 0; overflow: hidden; }
+    .ticker-container { display: flex; align-items: center; gap: 16px; }
+    .ticker-label { background: var(--primary-700); color: #fff; padding: 4px 12px; border-radius: var(--radius-sm); font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; flex-shrink: 0; }
+    .ticker-content { flex: 1; overflow: hidden; white-space: nowrap; }
+    .ticker-track { display: inline-block; white-space: nowrap; animation: ticker-slide 28s linear infinite; }
+    .ticker-track:hover { animation-play-state: paused; }
+    .ticker-item { margin-right: 48px; font-size: 0.875rem; color: #e2e8f0; }
+    @keyframes ticker-slide { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    /* Programs Grid */
+    .tabs-nav { display: flex; justify-content: center; gap: 8px; margin-bottom: 35px; flex-wrap: wrap; }
+    .tab-btn {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      padding: 8px 18px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .tab-btn.active, .tab-btn:hover { background: var(--primary-700); color: #fff; border-color: var(--primary-700); }
+
+    .programs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .program-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+    .program-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.8);
+      border-color: var(--primary-500);
+    }
+    .card-badge { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #60a5fa; margin-bottom: 8px; }
+    .prog-title { font-size: 1.1875rem; margin-bottom: 10px; }
+    .prog-desc { font-size: 0.875rem; color: var(--text-muted); flex: 1; margin-bottom: 16px; }
+    .prog-meta { font-size: 0.8125rem; color: var(--text-muted); border-top: 1px dashed var(--border-color); padding-top: 12px; margin-bottom: 16px; }
+    .card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 14px; }
+    .prog-fee { font-weight: 700; color: #38bdf8; font-size: 1rem; }
+
+    /* Fee Calculator */
+    .calculator-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 35px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 35px;
+      box-shadow: var(--shadow-md);
+    }
+    .range-wrapper { display: flex; align-items: center; gap: 14px; margin-top: 8px; }
+    .range-slider { flex: 1; accent-color: var(--primary-500); }
+    .range-badge { background: var(--primary-700); color: #fff; padding: 4px 10px; border-radius: var(--radius-sm); font-weight: 700; min-width: 50px; text-align: center; }
+    .results-box { background: var(--bg-surface-alt); padding: 24px; border-radius: var(--radius-md); border: 1px solid var(--border-color); }
+    .result-row { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.9375rem; color: var(--text-muted); }
+    .result-row strong { color: var(--text-main); }
+    .result-row.total { font-size: 1.125rem; font-weight: 700; border-top: 1px solid var(--border-color); padding-top: 12px; margin-top: 12px; color: var(--text-main); }
+    .total-price { color: #38bdf8; font-size: 1.5rem; }
+
+    /* FAQ */
+    .faq-accordion { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item { background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; }
+    .faq-question {
+      width: 100%;
+      padding: 16px 20px;
+      background: transparent;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-main);
+      cursor: pointer;
+    }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; padding: 0 20px; color: var(--text-muted); font-size: 0.9375rem; }
+    .faq-item.active .faq-answer { max-height: 200px; padding: 0 20px 16px 20px; }
+
+    /* Chatbot & Floating Widget */
+    .floating-widget { position: fixed; bottom: 24px; right: 24px; display: flex; flex-direction: column; gap: 10px; z-index: 999; }
+    .floating-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--primary-700);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-lg);
+    }
+    .chat-popup {
+      position: fixed;
+      bottom: 85px;
+      right: 24px;
+      width: 350px;
+      height: 450px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      z-index: 1000;
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .chat-popup.active { display: flex; }
+    .chat-header { background: var(--primary-700); color: #fff; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; }
+    .chat-messages { flex: 1; padding: 14px; overflow-y: auto; background: var(--bg-surface-alt); display: flex; flex-direction: column; gap: 10px; font-size: 0.875rem; }
+    .chat-msg { padding: 8px 12px; border-radius: 10px; max-width: 85%; }
+    .chat-msg.bot { background: var(--bg-surface); align-self: flex-start; border: 1px solid var(--border-color); color: var(--text-main); }
+    .chat-msg.user { background: var(--primary-700); color: #fff; align-self: flex-end; }
+    .chat-input-row { display: flex; border-top: 1px solid var(--border-color); background: var(--bg-surface); }
+    .chat-input-row input { flex: 1; padding: 10px 14px; border: none; outline: none; background: transparent; color: var(--text-main); }
+    .chat-input-row button { background: transparent; border: none; color: var(--primary-500); padding: 0 14px; cursor: pointer; }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-backdrop.active { display: flex; }
+    .modal-dialog { background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); width: 100%; max-width: 600px; padding: 28px; box-shadow: var(--shadow-xl); max-height: 90vh; overflow-y: auto; }
+    .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 12px; }
+    .modal-close { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-muted); }
+
+    /* Footer */
+    .site-footer { background: #030712; color: #94a3b8; padding: 60px 0 30px 0; font-size: 0.875rem; border-top: 1px solid var(--border-color); }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 35px; margin-bottom: 40px; }
+    .footer-title { color: #fff; font-size: 1rem; margin-bottom: 16px; }
+    .footer-links li { margin-bottom: 8px; }
+    .footer-links li a:hover { color: #60a5fa; }
+    .footer-bottom { border-top: 1px solid #111827; padding-top: 20px; text-align: center; font-size: 0.8125rem; color: #64748b; }
+
+    /* Toast */
+    .toast-container { position: fixed; bottom: 20px; left: 20px; z-index: 10001; display: flex; flex-direction: column; gap: 8px; }
+    .toast { background: #0f172a; color: #fff; padding: 12px 18px; border-radius: var(--radius-sm); font-size: 0.875rem; border-left: 4px solid var(--accent-emerald); box-shadow: var(--shadow-lg); }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero-container { grid-template-columns: 1fr; }
+      .programs-grid { grid-template-columns: repeat(2, 1fr); }
+      .calculator-card { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .nav-list { display: none; }
+      .programs-grid { grid-template-columns: 1fr; }
+      .hero-kpis { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body data-theme="dark">
+
+  <!-- Top Notification Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div>🎓 <strong>Adani University Admissions 2025–26 Open</strong> | Scholarships up to 75% for Meritorious Candidates</div>
+      <div class="top-bar-links">
+        <a href="#admissions">Admissions</a>
+        <a href="#contact">Helpline: +91 (079) 2555-6000</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark/Light Mode">
+          <svg class="sun-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+          <svg class="moon-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="#home" class="brand-logo">
+        <div class="logo-crest">
+          <svg viewBox="0 0 40 40" fill="none">
+            <rect width="40" height="40" rx="8" fill="#1d4ed8"/>
+            <path d="M20 7L8 14L20 21L32 14L20 7Z" fill="#fbbf24"/>
+            <path d="M12 18.5V25.5C12 28.5 15.5 32 20 32C24.5 32 28 28.5 28 25.5V18.5L20 23.5L12 18.5Z" fill="#ffffff"/>
+            <circle cx="20" cy="14" r="2" fill="#1d4ed8"/>
+          </svg>
+        </div>
+        <div>
+          <span class="brand-title">ADANI UNIVERSITY</span>
+          <span class="brand-sub">Adani Institute of Education and Research</span>
+          <span class="brand-tag">UGC Recognized • NAAC Grade 'A++' • AICTE Approved</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#academics" class="nav-link">Academics</a></li>
+          <li><a href="#calculator" class="nav-link">Fee Calculator</a></li>
+          <li><a href="#admissions" class="nav-link">Admissions</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <button class="btn btn-primary btn-sm" id="btn-open-modal">Apply to Adani</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="home">
+    <div class="hero-overlay"></div>
+    <div class="container hero-container">
+      <div>
+        <div class="hero-badge"><span class="pulse-dot"></span> Adani Group Initiative • Ranked #1 in Industry Immersion</div>
+        <h1 class="hero-title">Empowering Visionaries. <br><span class="text-gradient">Building Nation & Future.</span></h1>
+        <p class="hero-desc">Adani University merges cutting-edge academic scholarship with hands-on immersion in infrastructure, clean energy, mechatronics, AI, and corporate management.</p>
+        
+        <form class="hero-search-form" onsubmit="event.preventDefault(); window.searchPrograms();">
+          <input type="text" id="course-search-input" placeholder="Search by course (e.g. AI, Civil, Mechanical, MBA)...">
+          <button type="submit" class="btn btn-accent btn-sm">Find Course</button>
+        </form>
+
+        <div class="hero-cta-group">
+          <a href="#academics" class="btn btn-outline-light">Explore Programs →</a>
+          <a href="#calculator" class="btn btn-ghost-light">Tuition Estimator</a>
+        </div>
+
+        <div class="hero-kpis">
+          <div><span class="kpi-number">98.5%</span><span class="kpi-label">Placements</span></div>
+          <div><span class="kpi-number">₹52 LPA</span><span class="kpi-label">Highest Package</span></div>
+          <div><span class="kpi-number">300+</span><span class="kpi-label">Recruiters</span></div>
+          <div><span class="kpi-number">60+</span><span class="kpi-label">Patents</span></div>
+        </div>
+      </div>
+
+      <div class="hero-aside-card">
+        <div class="live-indicator">● FAST-TRACK ADMISSIONS 2025</div>
+        <h3 style="margin-bottom:6px;">Download Prospectus</h3>
+        <p style="font-size:0.875rem; color:var(--text-muted); margin-bottom:16px;">Connect with an Adani counselor for program brochures & scholarship evaluation.</p>
+        <form onsubmit="event.preventDefault(); window.showToast('Prospectus sent to your email & WhatsApp!'); this.reset();">
+          <div class="form-group"><input type="text" class="form-control" placeholder="Student Full Name" required></div>
+          <div class="form-group"><input type="email" class="form-control" placeholder="Email Address" required></div>
+          <div class="form-group"><input type="tel" class="form-control" placeholder="10-Digit Mobile" pattern="[0-9]{10}" required></div>
+          <div class="form-group">
+            <select class="form-control" required>
+              <option value="" disabled selected>Select Target Course</option>
+              <option>B.Tech Computer Science & AI</option>
+              <option>B.Tech Civil & Infrastructure</option>
+              <option>Diploma in Computer Engineering</option>
+              <option>Diploma in Mechanical & Automation</option>
+              <option>MBA Infrastructure & Energy</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-accent btn-block">Download Prospectus</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- News Ticker -->
+  <section class="notices-ticker-section">
+    <div class="container ticker-container">
+      <div class="ticker-label">News</div>
+      <div class="ticker-content">
+        <div class="ticker-track">
+          <span class="ticker-item">🌟 Adani University Merit Scholarship Test (AUNST 2025) registrations active.</span>
+          <span class="ticker-item">💼 2024 Placement Season finishes with 1,850+ offers extended by 300+ Fortune 500 recruiters.</span>
+          <span class="ticker-item">🌱 Adani Green Energy Center inaugurates new Hydrogen Fuel Cell testing laboratory.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Academic Programs Section -->
+  <section class="section" id="academics">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Programs</span>
+        <h2 class="section-title">Academic Programs & Specializations</h2>
+        <p class="section-subtitle">Industry-designed curricula engineered for 21st-century leadership in Infrastructure, AI, and Sustainable Energy.</p>
+      </div>
+
+      <div class="tabs-nav">
+        <button class="tab-btn active" data-tab="all">All Programs</button>
+        <button class="tab-btn" data-tab="polytechnic">Polytechnic Diplomas (3 Yrs)</button>
+        <button class="tab-btn" data-tab="ug">Undergraduate / B.Tech (4 Yrs)</button>
+        <button class="tab-btn" data-tab="pg">Postgraduate & MBA (2 Yrs)</button>
+      </div>
+
+      <div class="programs-grid" id="programs-grid">
+        <!-- 1 -->
+        <article class="program-card" data-category="polytechnic" data-name="diploma computer engineering ai">
+          <div class="card-badge">Polytechnic • 3 Years</div>
+          <h3 class="prog-title">Diploma in Computer Engineering & AI</h3>
+          <p class="prog-desc">Hands-on programming in Python, Web Development, Microcontrollers, and AI Automation algorithms.</p>
+          <div class="prog-meta">Eligibility: 10th Standard (Min 50%) • Intake: 120 Seats</div>
+          <div class="card-footer">
+            <span class="prog-fee">₹40,000 / Sem</span>
+            <button class="btn btn-sm btn-primary open-apply-btn" data-course="Diploma in Computer Engineering">Apply Now</button>
+          </div>
+        </article>
+        <!-- 2 -->
+        <article class="program-card" data-category="polytechnic" data-name="diploma mechanical mechatronics automation">
+          <div class="card-badge">Polytechnic • 3 Years</div>
+          <h3 class="prog-title">Diploma in Mechanical & Mechatronics</h3>
+          <p class="prog-desc">Industrial robotics, CNC machining, CAD/CAM modeling, and electric vehicle systems.</p>
+          <div class="prog-meta">Eligibility: 10th Standard (Min 50%) • Intake: 60 Seats</div>
+          <div class="card-footer">
+            <span class="prog-fee">₹38,000 / Sem</span>
+            <button class="btn btn-sm btn-primary open-apply-btn" data-course="Diploma in Mechanical">Apply Now</button>
+          </div>
+        </article>
+        <!-- 3 -->
+        <article class="program-card" data-category="polytechnic" data-name="diploma civil infrastructure smart ports">
+          <div class="card-badge">Polytechnic • 3 Years</div>
+          <h3 class="prog-title">Diploma in Civil & Smart Infrastructure</h3>
+          <p class="prog-desc">Modern surveying, BIM technology, smart port construction, and green structural engineering.</p>
+          <div class="prog-meta">Eligibility: 10th Standard (Min 50%) • Intake: 60 Seats</div>
+          <div class="card-footer">
+            <span class="prog-fee">₹36,000 / Sem</span>
+            <button class="btn btn-sm btn-primary open-apply-btn" data-course="Diploma in Civil">Apply Now</button>
+          </div>
+        </article>
+        <!-- 4 -->
+        <article class="program-card" data-category="ug" data-name="btech cse computer science ai ml">
+          <div class="card-badge">Undergraduate • 4 Years</div>
+          <h3 class="prog-title">B.Tech - Computer Science & AI/ML</h3>
+          <p class="prog-desc">Machine Learning, Cloud Native Computing, Deep Neural Networks, and Quantum computing with Google & Adani AI Labs.</p>
+          <div class="prog-meta">Eligibility: 10+2 PCM (60%) or JEE/GUJCET • Avg: ₹10.2 LPA</div>
+          <div class="card-footer">
+            <span class="prog-fee">₹85,000 / Sem</span>
+            <button class="btn btn-sm btn-accent open-apply-btn" data-course="B.Tech Computer Science">Apply Now</button>
+          </div>
+        </article>
+        <!-- 5 -->
+        <article class="program-card" data-category="ug" data-name="btech civil infrastructure engineering">
+          <div class="card-badge">Undergraduate • 4 Years</div>
+          <h3 class="prog-title">B.Tech - Civil & Infrastructure Engineering</h3>
+          <p class="prog-desc">India’s benchmark infrastructure program covering mega transportation corridors, port engineering, and smart cities.</p>
+          <div class="prog-meta">Eligibility: 10+2 PCM (60%) or Diploma Lateral • 100% Placements</div>
+          <div class="card-footer">
+            <span class="prog-fee">₹75,000 / Sem</span>
+            <button class="btn btn-sm btn-primary open-apply-btn" data-course="B.Tech Civil">Apply Now</button>
+          </div>
+        </article>
+        <!-- 6 -->
+        <article class="program-card" data-category="pg" data-name="mba infrastructure energy management">
+          <div class="card-badge">Postgraduate • 2 Years</div>
+          <h3 class="prog-title">MBA - Infrastructure & Energy Management</h3>
+          <p class="prog-desc">Nationally acclaimed program focused on Project Finance, Clean Energy Transition, Ports, Aviation & Global Supply Chain.</p>
+          <div class="prog-meta">Eligibility: Graduate (50%) + CAT/XAT/CMAT • Avg: ₹11.5 LPA</div>
+          <div class="card-footer">
+            <span class="prog-fee">₹1,10,000 / Sem</span>
+            <button class="btn btn-sm btn-accent open-apply-btn" data-course="MBA Infrastructure">Apply Now</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tuition Fee & Scholarship Calculator -->
+  <section class="section" id="calculator">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Transparency</span>
+        <h2 class="section-title">Tuition & Adani Scholarship Estimator</h2>
+        <p class="section-subtitle">Calculate your semester tuition, merit fee waivers, and net investment.</p>
+      </div>
+
+      <div class="calculator-card">
+        <div>
+          <div class="form-group">
+            <label style="font-weight:600; display:block; margin-bottom:6px;">Select Academic Program</label>
+            <select id="calc-course" class="form-control">
+              <option value="40000">Diploma in Computer Engineering (₹40,000 / Sem)</option>
+              <option value="38000">Diploma in Mechanical (₹38,000 / Sem)</option>
+              <option value="36000">Diploma in Civil (₹36,000 / Sem)</option>
+              <option value="85000" selected>B.Tech Computer Science & AI (₹85,000 / Sem)</option>
+              <option value="75000">B.Tech Civil & Infrastructure (₹75,000 / Sem)</option>
+              <option value="110000">MBA Infrastructure & Energy (₹1,10,000 / Sem)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label style="font-weight:600; display:block; margin-bottom:6px;">Qualifying Exam Score (%)</label>
+            <div class="range-wrapper">
+              <input type="range" id="calc-pct" min="50" max="100" value="88" class="range-slider">
+              <span id="pct-badge" class="range-badge">88%</span>
+            </div>
+            <small style="color:var(--text-muted);">Scores >= 75% unlock Adani merit scholarships (10% to 60%).</small>
+          </div>
+
+          <div class="form-group" style="margin-top:16px;">
+            <label><input type="checkbox" id="calc-hostel"> Add AC Campus Residence & Dining (+₹48,000 / Sem)</label>
+          </div>
+        </div>
+
+        <div class="results-box">
+          <h4 style="margin-bottom:14px; color:#fff;">Estimated Financial Breakdown</h4>
+          <div class="result-row"><span>Base Tuition Fee:</span><strong id="out-base">₹85,000</strong></div>
+          <div class="result-row" style="color:var(--accent-emerald);"><span>Merit Scholarship Discount (<span id="out-pct">30%</span>):</span><strong id="out-disc">- ₹25,500</strong></div>
+          <div class="result-row"><span>Residence & Dining:</span><strong id="out-hostel">₹0</strong></div>
+          <div class="result-row total"><span>Net Cost per Semester:</span><span class="total-price" id="out-net">₹59,500</span></div>
+          <button class="btn btn-accent btn-block" style="margin-top:18px;" onclick="window.openApplyModal()">Lock Scholarship & Apply</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Help Center</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Everything you need to know about admissions, approvals, and campus facilities.</p>
+      </div>
+
+      <div class="faq-accordion">
+        <div class="faq-item active">
+          <button class="faq-question"><span>Is Adani University approved by UGC and AICTE?</span><span>−</span></button>
+          <div class="faq-answer"><p>Yes. Adani University is recognized under UGC Section 2(f) and all engineering and polytechnic diplomas are approved by AICTE, New Delhi with NAAC 'A++' Grade accreditation.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question"><span>Can 10th pass students join Polytechnic Diplomas?</span><span>+</span></button>
+          <div class="faq-answer"><p>Yes. Candidates with 10th Standard / SSC (minimum 50%) are eligible for direct admission to our 3-year Polytechnic Diplomas.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question"><span>What is the placement record at Adani University?</span><span>+</span></button>
+          <div class="faq-answer"><p>In the 2024 academic cycle, 98.5% of eligible students were placed across 300+ recruiters including Adani Group, Google, Microsoft, AWS, L&T, and Deloitte with packages up to ₹52 LPA.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating Chatbot & Widget -->
+  <aside class="floating-widget">
+    <button class="floating-btn" id="chat-toggle-btn" title="Adani AI Assistant">💬</button>
+  </aside>
+
+  <!-- Chatbot Window -->
+  <div class="chat-popup" id="chat-popup">
+    <div class="chat-header">
+      <strong>Adani University Assistant</strong>
+      <button style="background:none; border:none; color:#fff; font-size:1.2rem; cursor:pointer;" onclick="document.getElementById('chat-popup').classList.remove('active')">&times;</button>
+    </div>
+    <div class="chat-messages" id="chat-messages">
+      <div class="chat-msg bot">Hello! 👋 Welcome to Adani University. You can ask about our B.Tech degrees, Polytechnic diplomas, scholarships, or placements!</div>
+    </div>
+    <form class="chat-input-row" onsubmit="event.preventDefault(); window.sendChatMessage();">
+      <input type="text" id="chat-input" placeholder="Type your query...">
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <!-- Application Modal Dialog -->
+  <div class="modal-backdrop" id="apply-modal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3>Adani University Online Application (2025–26)</h3>
+        <button class="modal-close" onclick="document.getElementById('apply-modal').classList.remove('active')">&times;</button>
+      </div>
+      <form onsubmit="event.preventDefault(); window.submitApplication();">
+        <div class="form-group"><label>Candidate Full Name *</label><input type="text" id="app-name" class="form-control" required placeholder="e.g. Rahul Patel"></div>
+        <div class="form-group"><label>Email Address *</label><input type="email" id="app-email" class="form-control" required placeholder="name@domain.com"></div>
+        <div class="form-group"><label>Mobile Phone *</label><input type="tel" id="app-phone" pattern="[0-9]{10}" class="form-control" required placeholder="10-digit number"></div>
+        <div class="form-group">
+          <label>Target Program *</label>
+          <select id="app-course" class="form-control" required>
+            <option>B.Tech Computer Science & AI</option>
+            <option>B.Tech Civil & Infrastructure</option>
+            <option>Diploma in Computer Engineering</option>
+            <option>Diploma in Mechanical</option>
+            <option>Diploma in Civil</option>
+            <option>MBA Infrastructure & Energy</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-accent btn-block btn-lg" style="margin-top:14px;">Submit Application (Registration ID Free)</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-box"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4 style="color:#fff; margin-bottom:8px;">ADANI UNIVERSITY</h4>
+          <p style="font-size:0.8125rem; line-height:1.6;">Established under Gujarat Private Universities Act by Adani Institute of Education and Research (AIER). NAAC Grade 'A++' Accredited.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Academic Wings</h4>
+          <ul class="footer-links">
+            <li><a href="#academics">Faculty of Engineering</a></li>
+            <li><a href="#academics">Faculty of Management</a></li>
+            <li><a href="#academics">Polytechnic Diplomas</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Portals</h4>
+          <ul class="footer-links">
+            <li><a href="#calculator">Scholarship Calculator</a></li>
+            <li><a href="#faq">Admissions FAQ</a></li>
+            <li><a href="#contact">Campus Helpline</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Campus Location</h4>
+          <p style="font-size:0.8125rem;">Shantigram Township, SG Highway, Ahmedabad, Gujarat — 382421.<br>Phone: +91 (079) 2555-6000<br>Email: admissions@adaniuni.ac.in</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2025–2026 Adani University. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       ALL-IN-ONE EMBEDDED JAVASCRIPT
+       ========================================== -->
+  <script>
+    // 1. Theme Switcher (Default Dark Black)
+    const themeBtn = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('adani-theme') || 'dark';
+    document.body.setAttribute('data-theme', savedTheme);
+    themeBtn.addEventListener('click', () => {
+      const cur = document.body.getAttribute('data-theme');
+      const next = cur === 'dark' ? 'light' : 'dark';
+      document.body.setAttribute('data-theme', next);
+      localStorage.setItem('adani-theme', next);
+      showToast(`Switched to ${next.toUpperCase()} mode.`);
+    });
+
+    // 2. Program Tabs
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-tab');
+        document.querySelectorAll('.program-card').forEach(card => {
+          const cat = card.getAttribute('data-category');
+          card.style.display = (filter === 'all' || cat === filter) ? 'flex' : 'none';
+        });
+      });
+    });
+
+    // 3. Program Search
+    window.searchPrograms = function() {
+      const q = document.getElementById('course-search-input').value.trim().toLowerCase();
+      document.querySelectorAll('.program-card').forEach(card => {
+        const text = (card.getAttribute('data-name') + ' ' + card.innerText).toLowerCase();
+        card.style.display = (!q || text.includes(q)) ? 'flex' : 'none';
+      });
+      document.getElementById('academics').scrollIntoView({ behavior: 'smooth' });
+    };
+
+    // 4. Fee & Scholarship Calculator
+    const calcCourse = document.getElementById('calc-course');
+    const calcPct = document.getElementById('calc-pct');
+    const pctBadge = document.getElementById('pct-badge');
+    const calcHostel = document.getElementById('calc-hostel');
+
+    function updateFee() {
+      const base = parseFloat(calcCourse.value);
+      const score = parseInt(calcPct.value, 10);
+      pctBadge.textContent = score + '%';
+
+      let rate = 0;
+      if (score >= 95) rate = 0.60;
+      else if (score >= 90) rate = 0.45;
+      else if (score >= 85) rate = 0.30;
+      else if (score >= 75) rate = 0.10;
+
+      const discount = base * rate;
+      const hostel = calcHostel.checked ? 48000 : 0;
+      const net = (base - discount) + hostel;
+
+      document.getElementById('out-base').textContent = '₹' + base.toLocaleString('en-IN');
+      document.getElementById('out-pct').textContent = Math.round(rate * 100) + '%';
+      document.getElementById('out-disc').textContent = '- ₹' + Math.round(discount).toLocaleString('en-IN');
+      document.getElementById('out-hostel').textContent = '₹' + hostel.toLocaleString('en-IN');
+      document.getElementById('out-net').textContent = '₹' + Math.round(net).toLocaleString('en-IN');
+    }
+    calcCourse.addEventListener('change', updateFee);
+    calcPct.addEventListener('input', updateFee);
+    calcHostel.addEventListener('change', updateFee);
+    updateFee();
+
+    // 5. FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const wasActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('active');
+          i.querySelector('.faq-question span:last-child').textContent = '+';
+        });
+        if (!wasActive) {
+          item.classList.add('active');
+          btn.querySelector('span:last-child').textContent = '−';
+        }
+      });
+    });
+
+    // 6. Application Modal
+    const modal = document.getElementById('apply-modal');
+    window.openApplyModal = function(courseName) {
+      modal.classList.add('active');
+      if (courseName) {
+        const select = document.getElementById('app-course');
+        for (let opt of select.options) {
+          if (opt.value.toLowerCase().includes(courseName.toLowerCase())) {
+            opt.selected = true; break;
+          }
+        }
+      }
+    };
+    document.getElementById('btn-open-modal').addEventListener('click', () => window.openApplyModal());
+    document.querySelectorAll('.open-apply-btn').forEach(b => {
+      b.addEventListener('click', () => window.openApplyModal(b.getAttribute('data-course')));
+    });
+
+    window.submitApplication = function() {
+      const regId = 'ADANI-2025-' + Math.floor(10000 + Math.random() * 90000);
+      showToast(`🎉 Application Registered! Ref ID: ${regId}`);
+      modal.classList.remove('active');
+    };
+
+    // 7. Chatbot Assistant
+    const chatToggle = document.getElementById('chat-toggle-btn');
+    const chatPopup = document.getElementById('chat-popup');
+    chatToggle.addEventListener('click', () => chatPopup.classList.toggle('active'));
+
+    window.sendChatMessage = function() {
+      const input = document.getElementById('chat-input');
+      const text = input.value.trim();
+      if (!text) return;
+
+      const msgs = document.getElementById('chat-messages');
+      const uMsg = document.createElement('div');
+      uMsg.className = 'chat-msg user';
+      uMsg.textContent = text;
+      msgs.appendChild(uMsg);
+      input.value = '';
+      msgs.scrollTop = msgs.scrollHeight;
+
+      setTimeout(() => {
+        const bMsg = document.createElement('div');
+        bMsg.className = 'chat-msg bot';
+        const q = text.toLowerCase();
+        if (q.includes('diploma') || q.includes('polytechnic')) {
+          bMsg.innerHTML = 'Adani University offers 3-year AICTE-approved Polytechnic Diplomas in <b>Computer</b>, <b>Mechanical</b>, and <b>Civil Infrastructure</b> for 10th pass students!';
+        } else if (q.includes('scholarship') || q.includes('fee')) {
+          bMsg.innerHTML = 'Merit scholarships grant up to <b>60% fee waiver</b> for scores >= 75%. Try our interactive fee calculator above!';
+        } else if (q.includes('placement')) {
+          bMsg.innerHTML = 'Our highest package is <b>₹52 LPA</b> with 300+ recruiters including Adani Group, Google, Microsoft, and L&T.';
+        } else {
+          bMsg.innerHTML = 'Thank you! Admissions for 2025–26 are open. Click <b>"Apply to Adani"</b> to submit your details!';
+        }
+        msgs.appendChild(bMsg);
+        msgs.scrollTop = msgs.scrollHeight;
+      }, 400);
+    };
+
+    // 8. Toast Helper
+    window.showToast = function(msg) {
+      const box = document.getElementById('toast-box');
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.textContent = msg;
+      box.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        setTimeout(() => toast.remove(), 400);
+      }, 3500);
+    };
+  </script>
+</body>
+</html>
