@@ -1,0 +1,1852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>TrustScan - QR &amp; Link Scanner</title>
+  
+  <!-- PWA Manifest & App Config -->
+  <meta name="theme-color" content="#020617">
+  <meta name="application-name" content="TrustScan">
+  
+  <!-- iOS Safari App Support -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="TrustScan">
+
+  <link rel="icon" type="image/jpeg" href="data:image/jpeg;base64,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">
+  <link rel="apple-touch-icon" href="data:image/jpeg;base64,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">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <!-- Lucide Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <!-- HTML5-QRCODE Library -->
+  <script src="https://cdn.jsdelivr.net/npm/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+  <!-- jsQR Library for High-Speed Mobile Screen Frame Decoding -->
+  <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    #qr-reader {
+      border: none !important;
+    }
+    #qr-reader__scan_region {
+      background: rgba(15, 23, 42, 0.7);
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+    #qr-reader__scan_region video {
+      border-radius: 1rem;
+      object-fit: cover;
+    }
+    #qr-reader__dashboard {
+      padding: 12px !important;
+      color: #94a3b8;
+    }
+    #qr-reader button {
+      background: #059669;
+      color: #ffffff;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      font-size: 0.875rem;
+      transition: all 0.2s;
+      border: 1px solid #10b981;
+      margin: 4px;
+      cursor: pointer;
+    }
+    #qr-reader button:hover {
+      background: #047857;
+    }
+    .glow-emerald {
+      box-shadow: 0 0 35px -5px rgba(16, 185, 129, 0.45);
+    }
+    .glow-rose {
+      box-shadow: 0 0 35px -5px rgba(244, 63, 94, 0.45);
+    }
+    .glow-amber {
+      box-shadow: 0 0 35px -5px rgba(245, 158, 11, 0.45);
+    }
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-8px); }
+      40%, 80% { transform: translateX(8px); }
+    }
+    .animate-shake {
+      animation: shake 0.4s ease-in-out;
+    }
+    .touch-progress-ring {
+      transition: stroke-dashoffset 0.05s linear;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+    }
+    /* Screen Scan Edge Glow & Animations */
+    @keyframes scan-edge-glow {
+      0% {
+        box-shadow: inset 0 0 35px 8px rgba(56, 189, 248, 0.65), 
+                    inset 0 0 70px 15px rgba(168, 85, 247, 0.5), 
+                    0 0 45px rgba(99, 102, 241, 0.55);
+      }
+      50% {
+        box-shadow: inset 0 0 55px 12px rgba(244, 114, 182, 0.7), 
+                    inset 0 0 95px 25px rgba(59, 130, 246, 0.6), 
+                    0 0 65px rgba(16, 185, 129, 0.65);
+      }
+      100% {
+        box-shadow: inset 0 0 35px 8px rgba(56, 189, 248, 0.65), 
+                    inset 0 0 70px 15px rgba(168, 85, 247, 0.5), 
+                    0 0 45px rgba(99, 102, 241, 0.55);
+      }
+    }
+    .scan-edge-glow {
+      animation: scan-edge-glow 2.5s infinite alternate ease-in-out;
+      border: 3.5px solid transparent;
+      border-image: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc, #f472b6, #34d399) 1;
+    }
+    .scan-gradient-text {
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 35%, #c084fc 70%, #f472b6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    @keyframes scan-shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    .scan-shimmer-btn {
+      background: linear-gradient(90deg, rgba(56,189,248,0.25) 0%, rgba(168,85,247,0.45) 50%, rgba(56,189,248,0.25) 100%);
+      background-size: 200% 100%;
+      animation: scan-shimmer 3s infinite linear;
+    }
+    @keyframes float-gentle {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    .animate-float-gentle {
+      animation: float-gentle 2.8s ease-in-out infinite;
+    }
+  </style>
+
+  <style id="trustscan-theme">
+    :root {
+      --ink: #060a12;
+      --panel: rgba(14, 20, 34, 0.78);
+      --panel-solid: #0d1320;
+      --line: rgba(148, 163, 184, 0.15);
+      --line-strong: rgba(148, 163, 184, 0.28);
+      --ok: #34d399;
+      --cyan: #22d3ee;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background:
+        radial-gradient(1100px 620px at 10% -10%, rgba(16,185,129,0.15), transparent 60%),
+        radial-gradient(900px 520px at 100% 0%, rgba(56,189,248,0.10), transparent 55%),
+        var(--ink) !important;
+      letter-spacing: -0.005em;
+    }
+
+    /* Cards */
+    body .bg-slate-900\/80 {
+      background: var(--panel) !important;
+      border-color: var(--line) !important;
+      border-width: 1px !important;
+      border-radius: 22px !important;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.05) inset, 0 24px 48px -24px rgba(0,0,0,0.7) !important;
+      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(16px);
+    }
+    #hero {
+      background: linear-gradient(135deg, rgba(16,185,129,0.18), rgba(13,19,32,0.88) 55%, rgba(56,189,248,0.10)) !important;
+      border: 1px solid rgba(52,211,153,0.30) !important;
+      border-radius: 26px !important;
+      box-shadow: 0 30px 60px -30px rgba(16,185,129,0.35), 0 1px 0 rgba(255,255,255,0.06) inset !important;
+    }
+    #hero > .blur-3xl { display: none; }
+    #hero h2 { font-size: clamp(1.3rem, 4.2vw, 1.75rem); line-height: 1.15; letter-spacing: -0.02em; }
+    #hero p { line-height: 1.6; }
+
+    /* Header */
+    body header.sticky {
+      background: rgba(6,10,18,0.72) !important;
+      border-bottom: 1px solid var(--line) !important;
+      -webkit-backdrop-filter: blur(18px);
+      backdrop-filter: blur(18px);
+    }
+
+    /* Icon tiles: one consistent treatment */
+    body main .w-9.h-9.rounded-xl,
+    body #hero .w-14.h-14 {
+      background: rgba(52,211,153,0.12) !important;
+      border: 1px solid rgba(52,211,153,0.30) !important;
+      color: #6ee7b7 !important;
+      border-radius: 14px !important;
+    }
+    body #hero .w-14.h-14 i { color: #6ee7b7 !important; }
+
+    /* Primary buttons share one voice */
+    body [class*="to-fuchsia-600"],
+    body .from-sky-500.to-indigo-600,
+    body .from-teal-500.to-sky-600,
+    body .from-emerald-500.to-teal-500 {
+      background-image: linear-gradient(135deg, #34d399 0%, #22d3ee 100%) !important;
+      color: #04130d !important;
+      font-weight: 800 !important;
+      border: 0 !important;
+      border-radius: 14px !important;
+      box-shadow: 0 10px 24px -10px rgba(52,211,153,0.65), 0 1px 0 rgba(255,255,255,0.35) inset !important;
+      transition: transform .15s ease, filter .15s ease !important;
+    }
+    body [class*="to-fuchsia-600"]:hover,
+    body .from-sky-500.to-indigo-600:hover,
+    body .from-teal-500.to-sky-600:hover,
+    body .from-emerald-500.to-teal-500:hover { filter: brightness(1.08); }
+    body .from-sky-500.via-indigo-500.to-fuchsia-500 {
+      background-image: linear-gradient(135deg, #34d399, #22d3ee) !important;
+    }
+    #modal-open-btn { border-radius: 14px !important; }
+
+    /* Secondary buttons */
+    body .bg-slate-800,
+    body .bg-slate-800\/80 {
+      background: rgba(255,255,255,0.05) !important;
+      border: 1px solid var(--line) !important;
+      border-radius: 14px;
+      transition: background .15s ease, border-color .15s ease;
+    }
+    body .bg-slate-800:hover, body .hover\:bg-slate-700:hover, body .hover\:bg-slate-800:hover {
+      background: rgba(255,255,255,0.10) !important;
+      border-color: var(--line-strong) !important;
+    }
+
+    /* Inputs */
+    body input[type="text"], body textarea {
+      background: rgba(4,7,13,0.75) !important;
+      border: 1px solid var(--line-strong) !important;
+      border-radius: 14px !important;
+      transition: border-color .15s ease, box-shadow .15s ease;
+    }
+    body input[type="text"]:focus, body textarea:focus {
+      border-color: var(--ok) !important;
+      box-shadow: 0 0 0 4px rgba(52,211,153,0.16);
+    }
+
+    /* Inner wells */
+    body main .bg-slate-950, body #modal-card .bg-slate-950 {
+      background: rgba(4,7,13,0.65) !important;
+      border-color: var(--line) !important;
+    }
+
+    /* Result states */
+    #state-success .glow-emerald { border-radius: 18px; }
+    #state-idle { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+    #state-idle > div:first-child {
+      background: rgba(52,211,153,0.08) !important;
+      border-color: rgba(52,211,153,0.25) !important;
+      color: #6ee7b7 !important;
+    }
+    #state-idle h4 { color: #e8edf6 !important; font-size: 1.1rem; letter-spacing: -0.01em; }
+
+    /* Modal */
+    #message-modal { background: rgba(3,6,12,0.82) !important; }
+    #modal-card {
+      background: var(--panel-solid) !important;
+      border-radius: 26px !important;
+    }
+
+    /* Floating controls */
+    #dock {
+      background: rgba(10,15,26,0.84) !important;
+      border: 1px solid var(--line-strong) !important;
+      border-radius: 24px !important;
+      bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px)) !important;
+      box-shadow: 0 24px 50px -16px rgba(0,0,0,0.8), 0 1px 0 rgba(255,255,255,0.06) inset !important;
+    }
+    #scan-floating-pill {
+      background: rgba(10,15,26,0.9) !important;
+      border: 1px solid rgba(52,211,153,0.35) !important;
+      bottom: calc(6.5rem + env(safe-area-inset-bottom, 0px)) !important;
+    }
+    .scan-gradient-text {
+      background: linear-gradient(135deg, #6ee7b7 0%, #22d3ee 55%, #7dd3fc 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Typography: readable small text, calmer labels */
+    .text-\[10px\], .text-\[11px\] { font-size: 12px !important; line-height: 1.45 !important; }
+    .uppercase { text-transform: none !important; }
+    .tracking-wider { letter-spacing: 0.01em !important; }
+    .text-slate-400 { color: #93a1b8 !important; }
+    .text-slate-500 { color: #7b8aa3 !important; }
+
+    /* Camera area */
+    #camera-viewport-touchzone { border-radius: 18px !important; }
+    #qr-reader button { background: #10b981; color: #04130d; border-color: #34d399; }
+
+    /* Quick-test chips */
+    #sample-chips button { border-radius: 999px !important; padding: 0.45rem 0.85rem !important; }
+
+    /* Accessibility */
+    :focus-visible { outline: 2px solid var(--ok); outline-offset: 2px; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
+  </style>
+
+  <style id="hacker-theme">
+    body::before {
+      content: ""; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse at center, transparent 35%, rgba(2,6,23,0.75) 100%),
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 3px);
+    }
+    body .bg-slate-900\/80 {
+      background: rgba(6,12,22,0.62) !important;
+      border-color: rgba(52,211,153,0.22) !important;
+      box-shadow: 0 0 0 1px rgba(52,211,153,0.05) inset, 0 0 28px -10px rgba(52,211,153,0.35), 0 24px 48px -24px rgba(0,0,0,0.8) !important;
+    }
+    #hero {
+      background: linear-gradient(135deg, rgba(16,185,129,0.20), rgba(6,12,22,0.70) 55%, rgba(34,211,238,0.10)) !important;
+      border-color: rgba(52,211,153,0.45) !important;
+      box-shadow: 0 0 40px -12px rgba(52,211,153,0.5) !important;
+    }
+    body header.sticky { background: rgba(3,8,16,0.7) !important; border-bottom-color: rgba(52,211,153,0.25) !important; }
+    body header h1 { text-shadow: 0 0 18px rgba(52,211,153,0.55); }
+    #dock { background: rgba(3,8,16,0.82) !important; border-color: rgba(52,211,153,0.35) !important; }
+    #modal-card { background: #060c16 !important; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col selection:bg-emerald-500 selection:text-white">
+
+    <!-- TRUSTSCAN WATERMARK -->
+  <div aria-hidden="true" style="position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+    <span style="transform:rotate(-30deg);font-size:min(22vw,150px);font-weight:800;letter-spacing:0.08em;color:rgba(255,255,255,0.022);white-space:nowrap;user-select:none;">TrustScan</span>
+  </div>
+  <div aria-hidden="true" style="position:fixed;right:10px;bottom:6px;z-index:60;pointer-events:none;font-size:10px;font-weight:700;letter-spacing:0.12em;color:rgba(255,255,255,0.35);">TrustScan</div>
+
+  <!-- HACKER MATRIX BACKGROUND -->
+  <canvas id="matrix-bg" aria-hidden="true" style="position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:0.62"></canvas>
+
+
+  <!-- Floating Toast Notification Container -->
+  <div id="toast-container" class="fixed top-5 right-5 z-50 flex flex-col gap-3 pointer-events-none max-w-sm w-full"></div>
+
+  <!-- SCREEN GLOW OVERLAY -->
+  <div id="scan-screen-overlay" class="fixed inset-0 z-50 pointer-events-none hidden opacity-0 transition-opacity duration-300">
+    <div class="w-full h-full scan-edge-glow flex flex-col justify-between p-4 sm:p-6">
+      <!-- Top Status Bar -->
+      <div class="flex items-center justify-between pointer-events-auto">
+        <div class="flex items-center gap-2 bg-slate-950/85 border border-purple-500/40 px-3.5 py-1.5 rounded-full shadow-2xl backdrop-blur-md">
+          <i data-lucide="sparkles" class="w-4 h-4 text-purple-400"></i>
+          <span class="text-xs font-bold scan-gradient-text">Screen Scanner</span>
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        </div>
+        <button 
+          onclick="closeScanOverlay()" 
+          class="bg-slate-900/90 hover:bg-slate-800 text-slate-300 hover:text-white p-2 rounded-full border border-slate-700 shadow-xl transition active:scale-95"
+        >
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- Center Touch Prompt -->
+      <div class="self-center text-center bg-slate-950/80 border border-slate-800/90 px-6 py-3.5 rounded-2xl backdrop-blur-md shadow-2xl">
+        <div class="flex items-center justify-center gap-2 mb-1">
+          <i data-lucide="scan" class="w-5 h-5 text-sky-400 animate-pulse"></i>
+          <span class="text-sm font-bold text-white">Analyzing Mobile Screen...</span>
+        </div>
+        <p class="text-[11px] text-slate-400 max-w-xs">
+          Scanning your screen. Fake/junk links will give error &amp; will not open!
+        </p>
+      </div>
+
+      <!-- Bottom Waveform -->
+      <div class="self-center bg-slate-950/90 border border-purple-500/40 px-5 py-2.5 rounded-full shadow-2xl backdrop-blur-lg flex items-center gap-3 pointer-events-auto mb-20">
+        <div class="flex items-center gap-1">
+          <span class="w-1.5 h-4 bg-sky-400 rounded-full animate-pulse"></span>
+          <span class="w-1.5 h-6 bg-indigo-400 rounded-full animate-pulse" style="animation-delay: 150ms"></span>
+          <span class="w-1.5 h-8 bg-purple-400 rounded-full animate-pulse" style="animation-delay: 300ms"></span>
+          <span class="w-1.5 h-5 bg-pink-400 rounded-full animate-pulse" style="animation-delay: 450ms"></span>
+        </div>
+        <span class="text-xs font-semibold text-slate-200">Listening to Screen Context</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING SCAN TRIGGER (Touch Screen Anywhere to Scan) -->
+  <div 
+    id="scan-floating-pill" 
+    class="fixed bottom-24 right-4 z-40 flex items-center gap-2 bg-slate-900/95 border border-indigo-500/50 backdrop-blur-xl p-2.5 rounded-2xl shadow-2xl animate-float-gentle cursor-pointer group active:scale-95 transition"
+    onclick="triggerScreenScan()"
+    title="Touch to scan mobile screen"
+  >
+    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 via-indigo-500 to-fuchsia-500 p-0.5 shadow-lg shadow-indigo-500/30 flex items-center justify-center shrink-0">
+      <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
+        <i data-lucide="sparkles" class="w-5 h-5 text-indigo-400 group-hover:scale-110 transition"></i>
+      </div>
+    </div>
+    <div class="pr-2 hidden sm:block">
+      <div class="text-[11px] font-bold scan-gradient-text flex items-center gap-1">
+        <span>Screen Touch Scan</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+      </div>
+      <div class="text-[10px] text-slate-400">Touch to scan screen</div>
+    </div>
+  </div>
+
+  <!-- FLOATING BOTTOM BAR WITH TOUCH & SCREEN SCAN -->
+  <div id="dock" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-40 w-11/12 max-w-md bg-slate-900/90 border border-indigo-500/40 backdrop-blur-xl p-3 rounded-2xl shadow-2xl flex items-center justify-between gap-2.5">
+    <button 
+      onclick="triggerScreenScan()"
+      class="flex-1 py-2.5 px-3 rounded-xl bg-gradient-to-r from-sky-500 via-indigo-600 to-fuchsia-600 hover:opacity-90 text-white font-bold text-xs shadow-md transition active:scale-95 flex items-center justify-center gap-1.5"
+    >
+      <i data-lucide="sparkles" class="w-4 h-4"></i>
+      <span>Touch Scan</span>
+    </button>
+
+    <button 
+      onclick="startMobileScreenScan()"
+      class="flex-1 py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-bold text-xs transition active:scale-95 flex items-center justify-center gap-1.5"
+    >
+      <i data-lucide="smartphone" class="w-4 h-4 text-emerald-400"></i>
+      <span>Scan Screen</span>
+    </button>
+  </div>
+
+  <!-- Interactive Message & Payment Details Modal -->
+  <div id="message-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md hidden opacity-0 transition-opacity duration-300">
+    <div id="modal-card" class="bg-slate-900 border rounded-2xl max-w-lg w-full p-6 shadow-2xl transform scale-95 transition-transform duration-300">
+      
+      <!-- Modal Header -->
+      <div class="flex items-start justify-between pb-4 border-b border-slate-800">
+        <div class="flex items-center gap-3">
+          <div id="modal-icon-container" class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0">
+            <!-- Injected by JS -->
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span id="modal-badge" class="px-2.5 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider">
+                Status
+              </span>
+              <span id="modal-action-tag" class="px-2.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                Action
+              </span>
+            </div>
+            <h3 id="modal-title" class="font-bold text-lg text-white mt-1">Title</h3>
+          </div>
+        </div>
+        <button onclick="closeModal()" class="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800 transition">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="py-5 space-y-4">
+        <div>
+          <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-1">Inspection Status:</span>
+          <p id="modal-message-text" class="text-sm text-slate-200 leading-relaxed font-medium">
+            Details will appear here...
+          </p>
+        </div>
+
+        <!-- Details Box for Genuine Link (Will Open) -->
+        <div id="modal-genuine-box" class="hidden bg-emerald-950/30 border border-emerald-500/40 rounded-xl p-4 space-y-2 text-xs">
+          <div class="flex justify-between items-center text-slate-300">
+            <span class="text-slate-400">Security Check:</span>
+            <span class="font-bold text-emerald-400 flex items-center gap-1">
+              <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Genuine Link Verified (Clean)
+            </span>
+          </div>
+          <div class="flex justify-between items-center text-slate-300">
+            <span class="text-slate-400">Destination:</span>
+            <span id="genuine-host" class="font-bold text-white font-mono text-xs">domain.com</span>
+          </div>
+          <p class="text-[11px] text-emerald-300/90 pt-1">
+            🚀 This is a safe, genuine link. Opening link now...
+          </p>
+        </div>
+
+        <!-- ERROR BOX FOR FAKE / JUNK LINKS (WILL NOT OPEN) -->
+        <div id="modal-error-box" class="hidden bg-rose-950/40 border border-rose-500/50 rounded-xl p-4 text-xs space-y-2 text-rose-200 glow-rose animate-shake">
+          <div class="font-bold flex items-center gap-2 text-rose-300 text-sm">
+            <i data-lucide="alert-octagon" class="w-5 h-5 text-rose-400 shrink-0"></i>
+            <span id="modal-error-heading">Security Error: Link Blocked!</span>
+          </div>
+          <p id="modal-error-explanation" class="text-rose-200 leading-relaxed font-medium">
+            This link has been blocked because it is fake or junk data. It will NOT open!
+          </p>
+        </div>
+
+        <!-- Raw Scanned Payload -->
+        <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800">
+          <span class="text-[11px] font-semibold text-slate-400 block mb-1">Scanned Link / Content:</span>
+          <div id="modal-content-text" class="font-mono text-xs text-cyan-300 break-all select-all max-h-24 overflow-y-auto">
+            --
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Action Buttons -->
+      <div id="modal-action-bar" class="flex items-center justify-end gap-3 pt-3 border-t border-slate-800">
+        <button onclick="closeModal()" class="px-4 py-2.5 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 transition">
+          Close Message
+        </button>
+        <a id="modal-open-btn" href="#" target="_blank" rel="noopener noreferrer" class="hidden px-5 py-2.5 rounded-xl text-xs font-bold bg-emerald-500 hover:bg-emerald-400 text-slate-950 flex items-center gap-1.5 shadow-lg shadow-emerald-500/20 transition">
+          <span>Open Link Now</span>
+          <i data-lucide="external-link" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="relative z-10 border-b border-slate-800/80 bg-slate-900/60 backdrop-blur-xl sticky top-0">
+    <div class="max-w-6xl mx-auto px-4 py-3 sm:py-4 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-500 p-0.5 shadow-lg shadow-emerald-500/20 shrink-0">
+          <div class="w-full h-full bg-black rounded-[10px] flex items-center justify-center overflow-hidden">
+            <img src="data:image/jpeg;base64,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" alt="TrustScan logo" class="w-full h-full object-contain rounded-[10px]" style="background:#000">
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center space-x-2">
+            <h1 class="font-extrabold text-base sm:text-lg tracking-tight bg-gradient-to-r from-white via-slate-100 to-slate-400 bg-clip-text text-transparent">
+              TrustScan
+            </h1>
+            <span class="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 rounded-full">
+              PWA
+            </span>
+          </div>
+          <p class="text-[11px] sm:text-xs text-slate-400">Screen Scanner &bull; Zero-Trust Protection</p>
+        </div>
+      </div>
+
+      <!-- Controls: Voice Alerts & Screen Scan -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <button 
+          onclick="triggerScreenScan()" 
+          class="flex items-center gap-1.5 text-xs bg-gradient-to-r from-sky-500 via-indigo-600 to-fuchsia-600 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-lg shadow-lg shadow-indigo-500/20 transition active:scale-95"
+        >
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+          <span>Scan Screen</span>
+        </button>
+
+        <button 
+          id="voice-toggle-btn" 
+          onclick="toggleVoiceAlerts()" 
+          title="Toggle Voice Speech Message"
+          class="flex items-center gap-1.5 text-xs bg-slate-800/80 hover:bg-slate-800 border border-slate-700/80 px-2.5 sm:px-3 py-1.5 rounded-lg text-slate-200 transition"
+        >
+          <i id="voice-icon" data-lucide="volume-2" class="w-4 h-4 text-emerald-400"></i>
+          <span id="voice-label" class="hidden md:inline">Voice: ON</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="relative z-10 flex-1 max-w-6xl w-full mx-auto px-4 py-6 sm:py-8 flex flex-col gap-6 sm:gap-8 pb-32">
+
+    <!-- SCREEN SCAN ASSISTANT -->
+    <div id="hero" class="bg-gradient-to-r from-slate-950 via-indigo-950/50 to-slate-950 border-2 border-indigo-500/40 rounded-2xl p-5 sm:p-6 backdrop-blur shadow-2xl relative overflow-hidden group">
+      <!-- Ambient Glow Blobs -->
+      <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -left-10 -top-10 w-48 h-48 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-5 relative z-10">
+        <div class="flex items-center gap-4">
+          <div class="w-14 h-14 rounded-2xl bg-slate-900 border border-indigo-500/40 p-2 flex items-center justify-center shrink-0 shadow-lg shadow-indigo-500/20">
+            <i data-lucide="sparkles" class="w-8 h-8 text-indigo-400 animate-pulse"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="px-2.5 py-0.5 rounded text-[10px] font-extrabold uppercase tracking-wider bg-indigo-500/20 text-indigo-300 border border-indigo-500/40">
+                Screen scanner
+              </span>
+              <span class="text-xs text-slate-400">Works across apps</span>
+            </div>
+            <h2 class="text-lg sm:text-xl font-extrabold text-white flex items-center gap-2">
+              <span>Check any link on your screen</span>
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-300 mt-0.5 max-w-xl">
+              Scan whatever is open on your phone: WhatsApp, Gallery or a browser. Safe https links open straight away. Fake or junk links are blocked and you see why.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 w-full lg:w-auto">
+          <!-- 1-Click Screen Scan Button -->
+          <button 
+            onclick="triggerScreenScan()"
+            class="flex-1 sm:flex-initial px-5 py-3.5 rounded-xl text-xs font-black text-white bg-gradient-to-r from-sky-500 via-indigo-600 to-fuchsia-600 hover:from-sky-400 hover:via-indigo-500 hover:to-fuchsia-500 shadow-xl shadow-indigo-500/30 transition active:scale-95 flex items-center justify-center gap-2"
+          >
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
+            <span>Scan Screen</span>
+          </button>
+
+          <!-- Floating Picture-in-Picture Mini Overlay -->
+          <button 
+            onclick="openFloatingPiPScanner()"
+            class="flex-1 sm:flex-initial px-4 py-3.5 rounded-xl text-xs font-bold text-slate-200 bg-slate-900 hover:bg-slate-800 border border-indigo-500/30 shadow-lg transition active:scale-95 flex items-center justify-center gap-1.5"
+            title="Mini floating scanner window that stays on top of WhatsApp and Gallery"
+          >
+            <i data-lucide="picture-in-picture-2" class="w-4 h-4 text-purple-400"></i>
+            <span>Floating scanner</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- LINK SCANNER: TYPE / PASTE ANY LINK -->
+    <div class="bg-slate-900/80 border border-indigo-500/40 rounded-2xl p-5 shadow-xl">
+      <div class="flex items-center gap-2.5 mb-3">
+        <div class="w-9 h-9 rounded-xl bg-sky-500/20 border border-sky-500/40 flex items-center justify-center text-sky-400">
+          <i data-lucide="link" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h3 class="text-sm font-bold text-white">Link Scanner</h3>
+          <span class="text-[11px] text-slate-400">Paste any link to check it before you open it</span>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-2.5">
+        <input
+          id="link-scan-input"
+          type="text"
+          inputmode="url"
+          autocomplete="off"
+          autocapitalize="off"
+          spellcheck="false"
+          placeholder="Paste or type an https:// link here"
+          class="flex-1 min-w-0 px-3.5 py-3 rounded-xl bg-slate-950 border border-slate-700 focus:border-indigo-500 focus:outline-none text-xs sm:text-sm text-slate-100 placeholder-slate-500 font-mono"
+          onkeydown="if(event.key==='Enter'){scanTypedLink();}"
+        >
+        <div class="flex gap-2.5">
+          <button
+            onclick="pasteLinkFromClipboard()"
+            class="px-3.5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-bold text-xs transition active:scale-95 flex items-center justify-center gap-1.5"
+          >
+            <i data-lucide="clipboard-paste" class="w-4 h-4"></i>
+            <span>Paste</span>
+          </button>
+          <button
+            onclick="scanTypedLink()"
+            class="flex-1 sm:flex-initial px-5 py-3 rounded-xl bg-gradient-to-r from-sky-500 via-indigo-600 to-fuchsia-600 hover:opacity-90 text-white font-bold text-xs shadow-md transition active:scale-95 flex items-center justify-center gap-1.5"
+          >
+            <i data-lucide="shield-check" class="w-4 h-4"></i>
+            <span>Scan Link</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEXT QR GENERATOR -->
+    <div class="bg-slate-900/80 border border-teal-500/40 rounded-2xl p-5 shadow-xl">
+      <div class="flex items-center gap-2.5 mb-3">
+        <div class="w-9 h-9 rounded-xl bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400">
+          <i data-lucide="qr-code" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h3 class="text-sm font-bold text-white">Text QR Maker</h3>
+          <span class="text-[11px] text-slate-400">Turn any text or link into a QR code</span>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row gap-4">
+        <div class="flex-1 flex flex-col gap-2.5">
+          <textarea
+            id="text-qr-input"
+            rows="4"
+            maxlength="1000"
+            placeholder="Type your text or link here..."
+            class="w-full px-3.5 py-3 rounded-xl bg-slate-950 border border-slate-700 focus:border-teal-500 focus:outline-none text-xs sm:text-sm text-slate-100 placeholder-slate-500 resize-none"
+          ></textarea>
+          <div class="flex gap-2.5">
+            <button
+              onclick="generateTextQR()"
+              class="flex-1 px-4 py-3 rounded-xl bg-gradient-to-r from-teal-500 to-sky-600 hover:opacity-90 text-white font-bold text-xs shadow-md transition active:scale-95 flex items-center justify-center gap-1.5"
+            >
+              <i data-lucide="qr-code" class="w-4 h-4"></i>
+              <span>Make QR</span>
+            </button>
+            <button
+              id="text-qr-download"
+              onclick="downloadTextQR()"
+              class="hidden px-4 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-bold text-xs transition active:scale-95 flex items-center justify-center gap-1.5"
+            >
+              <i data-lucide="download" class="w-4 h-4"></i>
+              <span>Save PNG</span>
+            </button>
+          </div>
+        </div>
+        <div id="text-qr-output" class="w-full md:w-48 h-48 shrink-0 rounded-xl bg-slate-950 border border-dashed border-slate-700 flex items-center justify-center text-[11px] text-slate-500 text-center p-2">
+          Your QR will show here
+        </div>
+      </div>
+    </div>
+
+    <!-- SCAN OPTIONS GRID: LIVE SCREEN & GALLERY PHOTO -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      
+      <!-- Card 1: Scan Mobile Screen Live (Screen Capture) -->
+      <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 flex flex-col justify-between shadow-xl">
+        <div>
+          <div class="flex items-center gap-2.5 mb-2">
+            <div class="w-9 h-9 rounded-xl bg-indigo-500/20 border border-indigo-500/40 flex items-center justify-center text-indigo-400">
+              <i data-lucide="scan" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-sm font-bold text-white">Live Screen Scanner</h3>
+              <span class="text-[11px] text-slate-400">Scans WhatsApp, Gallery &amp; other apps</span>
+            </div>
+          </div>
+          <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+            Click below to capture and scan whatever is displaying on your phone. Fake/junk links will NOT open and will give error messages. Genuine links open instantly.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-800 flex gap-2.5">
+          <button 
+            onclick="triggerScreenScan()"
+            class="flex-1 py-2.5 px-3 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 hover:opacity-90 text-white font-bold text-xs shadow-md transition active:scale-95 flex items-center justify-center gap-1.5"
+          >
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
+            <span>Scan Phone Screen</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 2: Gallery Screenshot & Photo Scan -->
+      <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 flex flex-col justify-between shadow-xl">
+        <div>
+          <div class="flex items-center gap-2.5 mb-2">
+            <div class="w-9 h-9 rounded-xl bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400">
+              <i data-lucide="image" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-sm font-bold text-white">Screenshot &amp; Gallery Photo</h3>
+              <span class="text-[11px] text-slate-400">Select any saved QR image</span>
+            </div>
+          </div>
+          <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+            Choose a screenshot or photo from your phone's Gallery. TrustScan will inspect the link and enforce fraud detection.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-800 flex gap-2.5">
+          <button 
+            onclick="document.getElementById('screen-screenshot-input').click()"
+            class="flex-1 py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-teal-300 font-bold text-xs border border-teal-500/30 transition active:scale-95 flex items-center justify-center gap-1.5 shadow-md"
+          >
+            <i data-lucide="upload" class="w-4 h-4"></i>
+            <span>Select Screenshot / Photo</span>
+          </button>
+          <input type="file" id="screen-screenshot-input" accept="image/*" class="hidden" onchange="handleFileUpload(event)">
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Scanner & Inspector Section -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
+      
+      <!-- Left Column: Camera Scanner & Simulation -->
+      <div class="lg:col-span-7 flex flex-col gap-6">
+        
+        <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 sm:p-5 backdrop-blur shadow-2xl relative">
+          
+          <div class="flex items-center justify-between mb-3 pb-3 border-b border-slate-800">
+            <div class="flex items-center space-x-2">
+              <i data-lucide="camera" class="w-5 h-5 text-emerald-400"></i>
+              <h3 class="font-bold text-sm sm:text-base text-slate-200">Camera scanner</h3>
+            </div>
+            
+            <button onclick="startCameraScanner()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-emerald-400 text-xs font-semibold border border-slate-700 transition flex items-center gap-1">
+              <i data-lucide="power" class="w-3.5 h-3.5"></i>
+              <span>Toggle Camera</span>
+            </button>
+          </div>
+
+          <div 
+            id="camera-viewport-touchzone"
+            class="relative bg-slate-950 rounded-xl overflow-hidden border border-slate-800/80 min-h-[200px] flex items-center justify-center cursor-pointer select-none"
+          >
+            <div id="qr-reader" class="w-full"></div>
+            
+            <div id="camera-placeholder" class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-slate-950">
+              <div class="w-12 h-12 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-center text-emerald-400 mb-2 shadow-inner">
+                <i data-lucide="camera" class="w-6 h-6"></i>
+              </div>
+              <h4 class="font-semibold text-slate-200 text-xs mb-1">Camera Standby</h4>
+              <p class="text-[11px] text-slate-500">Scan physical QR codes with camera, or use Mobile Screen Scanner above.</p>
+            </div>
+          </div>
+
+          <!-- Quick Test Simulation Buttons -->
+          <div class="mt-4 pt-3 border-t border-slate-800">
+            <span class="text-xs font-semibold text-slate-400 block mb-2">Try the scanner with a sample</span>
+            <div id="sample-chips" class="flex flex-wrap gap-2">
+              <button onclick="testLink('https://google.com')" class="text-xs px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-emerald-400 border border-emerald-500/30 flex items-center gap-1 transition">
+                <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> Safe link opens
+              </button>
+              <button onclick="testLink('http://google.com')" class="text-xs px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-rose-400 border border-rose-500/30 flex items-center gap-1 transition">
+                <i data-lucide="lock-open" class="w-3.5 h-3.5"></i> http link is blocked
+              </button>
+              <button onclick="testLink('http://paytm-free-bonus.xyz')" class="text-xs px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-rose-400 border border-rose-500/30 flex items-center gap-1 transition">
+                <i data-lucide="alert-octagon" class="w-3.5 h-3.5"></i> Fake link is blocked
+              </button>
+              <button onclick="testLink('corrupted_junk_gibberish_string')" class="text-xs px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-400 border border-amber-500/30 flex items-center gap-1 transition">
+                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i> Junk data is blocked
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Right Column: Verification Results & Messages -->
+      <div class="lg:col-span-5 flex flex-col gap-5">
+        
+        <!-- Live Scan Status Box -->
+        <div id="result-container" class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 sm:p-6 backdrop-blur shadow-2xl transition-all duration-300">
+          
+          <!-- Idle State -->
+          <div id="state-idle" class="flex flex-col items-center justify-center py-10 text-center">
+            <div class="w-16 h-16 rounded-full bg-slate-800/50 border border-slate-700/60 flex items-center justify-center text-slate-500 mb-3">
+              <i data-lucide="scan" class="w-8 h-8"></i>
+            </div>
+            <h4 class="font-bold text-slate-300 text-base">Nothing scanned yet</h4>
+            <p class="text-xs text-slate-500 mt-1 max-w-xs">
+              Scan a QR code, link or screen. Safe links open automatically; fake or junk links are blocked.
+            </p>
+          </div>
+
+          <!-- SUCCESS STATE (Other Genuine Links -> Open Link) -->
+          <div id="state-success" class="hidden flex-col gap-4 animate-in fade-in">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
+                <i data-lucide="check-circle" class="w-7 h-7"></i>
+              </div>
+              <div>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+                  Genuine Link Verified
+                </span>
+                <h4 id="success-type-title" class="font-bold text-emerald-400 text-lg mt-0.5">Link Approved to Open</h4>
+              </div>
+            </div>
+
+            <!-- Details Card -->
+            <div class="bg-slate-950 p-4 rounded-xl border border-emerald-500/30 glow-emerald space-y-2.5">
+              <div class="flex justify-between items-center text-xs">
+                <span class="text-slate-400 font-medium">Link Status:</span>
+                <span class="font-bold text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800">Authentic / Safe</span>
+              </div>
+              <div class="flex justify-between items-center text-xs">
+                <span class="text-slate-400 font-medium">Destination:</span>
+                <span id="side-destination-name" class="font-semibold text-white font-mono text-xs">google.com</span>
+              </div>
+              <div class="pt-2 border-t border-slate-800 text-[11px]">
+                <span class="text-slate-400 block mb-0.5">Verified URL:</span>
+                <div id="success-url" class="font-mono text-cyan-300 break-all select-all font-medium">
+                  https://...
+                </div>
+              </div>
+            </div>
+
+            <!-- Open Link Button -->
+            <div class="flex flex-col gap-2 pt-2">
+              <a 
+                id="open-url-btn" 
+                href="#" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-bold px-4 py-3 rounded-xl shadow-lg shadow-emerald-500/25 transition active:scale-95 text-sm"
+              >
+                <span>Open Link</span>
+                <i data-lucide="external-link" class="w-4 h-4"></i>
+              </a>
+
+              <div class="flex items-center justify-between px-1 text-xs">
+                <button onclick="resetScannerResult()" class="text-slate-400 hover:text-white underline">
+                  Clear Result
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ERROR STATE (Fake or Junk Link -> Does NOT Open & Shows Error) -->
+          <div id="state-error" class="hidden flex-col gap-4 animate-in fade-in">
+            <div class="flex items-center gap-3">
+              <div id="error-icon-box" class="w-12 h-12 rounded-xl bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-400">
+                <i data-lucide="alert-octagon" class="w-7 h-7"></i>
+              </div>
+              <div>
+                <span id="error-badge-tag" class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-rose-500/20 text-rose-300 border border-rose-500/40">
+                  Security Interception
+                </span>
+                <h4 id="error-heading-text" class="font-bold text-rose-400 text-lg mt-0.5">Error: Blocked!</h4>
+              </div>
+            </div>
+
+            <!-- Block Message Card -->
+            <div id="error-card-box" class="bg-rose-950/30 p-4 rounded-xl border border-rose-500/40 glow-rose animate-shake">
+              <div class="flex items-start gap-2.5">
+                <i id="error-state-icon" data-lucide="x-circle" class="w-5 h-5 text-rose-400 shrink-0 mt-0.5"></i>
+                <div>
+                  <h5 id="error-title" class="font-bold text-rose-200 text-sm">Fake / Junk Error Message</h5>
+                  <p id="error-description" class="text-xs text-rose-300 mt-1 leading-relaxed font-medium">
+                    This link has been blocked because it is fake or junk data. It will NOT open!
+                  </p>
+                </div>
+              </div>
+
+              <!-- Raw Rejected Payload -->
+              <div class="mt-3 pt-3 border-t border-rose-900/40">
+                <span class="text-[10px] font-bold text-rose-400 uppercase tracking-wider block mb-1">Blocked Content:</span>
+                <div id="error-payload" class="font-mono text-xs bg-slate-950/80 p-2.5 rounded-lg border border-rose-950 text-rose-200 break-all select-all max-h-24 overflow-y-auto">
+                  --
+                </div>
+              </div>
+            </div>
+
+            <!-- Disabled Navigation Notice -->
+            <div class="flex flex-col gap-2 pt-1">
+              <div class="w-full flex items-center justify-center gap-2 bg-slate-800 text-slate-500 font-medium px-4 py-3 rounded-xl border border-slate-700/50 cursor-not-allowed text-xs">
+                <i data-lucide="ban" class="w-4 h-4 text-rose-400"></i>
+                <span>Blocked: this link will not open</span>
+              </div>
+              <button onclick="resetScannerResult()" class="text-xs text-center text-slate-400 hover:text-white underline mt-1">
+                Scan another
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Audio Synthesis & Voice Alerts -->
+  <script>
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    let audioCtx = null;
+    let voiceAlertsEnabled = true;
+
+    function initAudio() {
+      if (!audioCtx) audioCtx = new AudioContext();
+    }
+
+    function toggleVoiceAlerts() {
+      voiceAlertsEnabled = !voiceAlertsEnabled;
+      const label = document.getElementById('voice-label');
+      const icon = document.getElementById('voice-icon');
+      if (voiceAlertsEnabled) {
+        label.textContent = 'Voice: ON';
+        icon.className = 'w-4 h-4 text-emerald-400';
+        showToast('Voice alerts enabled', 'info');
+      } else {
+        label.textContent = 'Voice: OFF';
+        icon.className = 'w-4 h-4 text-slate-500';
+        showToast('Voice alerts muted', 'info');
+      }
+    }
+
+    function speakMessage(text) {
+      if (!voiceAlertsEnabled || !('speechSynthesis' in window)) return;
+      try {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.rate = 1.0;
+        utterance.pitch = 1.0;
+        window.speechSynthesis.speak(utterance);
+      } catch (e) {
+        console.warn('Speech synthesis error', e);
+      }
+    }
+
+    function playTickSound() {
+      try {
+        initAudio();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(440, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.05);
+      } catch (e) {}
+    }
+
+    function playSuccessSound() {
+      try {
+        initAudio();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(587.33, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(880, audioCtx.currentTime + 0.15);
+        gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.3);
+      } catch (e) {
+        console.warn('Audio play failed', e);
+      }
+    }
+
+    function playErrorSound() {
+      try {
+        initAudio();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(220, audioCtx.currentTime);
+        osc.frequency.setValueAtTime(146.83, audioCtx.currentTime + 0.15);
+        gain.gain.setValueAtTime(0.25, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.45);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.45);
+      } catch (e) {
+        console.warn('Audio play failed', e);
+      }
+    }
+
+    function showToast(message, type = 'info') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = `pointer-events-auto p-3.5 rounded-xl border shadow-xl flex items-center justify-between text-xs font-semibold backdrop-blur-md transition-all duration-300 transform translate-y-2 opacity-0 ${
+        type === 'success' 
+          ? 'bg-emerald-950/90 border-emerald-500/50 text-emerald-200' 
+          : type === 'error'
+          ? 'bg-rose-950/90 border-rose-500/50 text-rose-200'
+          : 'bg-amber-950/90 border-amber-500/50 text-amber-200'
+      }`;
+
+      toast.innerHTML = `
+        <div class="flex items-center gap-2">
+          <i data-lucide="${type === 'success' ? 'check-circle' : type === 'error' ? 'alert-octagon' : 'alert-triangle'}" class="w-4 h-4 shrink-0"></i>
+          <span>${escapeHtml(message)}</span>
+        </div>
+      `;
+
+      container.appendChild(toast);
+      lucide.createIcons();
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-2', 'opacity-0');
+      }, 10);
+
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+      }, 3500);
+    }
+  </script>
+
+  <!-- PWA SERVICE WORKER & SHORTCUTS -->
+  <script>
+    // Register Service Worker for offline support
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service-worker.js')
+          .then((reg) => console.log('Service Worker Registered successfully:', reg.scope))
+          .catch((err) => console.log('Service Worker registration failed:', err));
+      });
+    }
+
+    // Auto-launch screen scanner if opened via Home Screen Shortcut
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('action') === 'screenscan') {
+        setTimeout(() => triggerScreenScan(), 500);
+      }
+    });
+  </script>
+
+  <!-- MOBILE SCREEN LIVE CAPTURE & SCREEN SCANNER -->
+  <script>
+    let screenStream = null;
+    let screenVideo = document.createElement('video');
+    screenVideo.autoplay = true;
+    screenVideo.playsInline = true;
+    screenVideo.muted = true;
+    let isScreenScanningActive = false;
+    let screenCanvas = document.createElement('canvas');
+    let screenCtx = screenCanvas.getContext('2d', { willReadFrequently: true });
+
+    async function startMobileScreenScan() {
+      try {
+        if (!navigator.mediaDevices || !navigator.mediaDevices.getDisplayMedia) {
+          showToast('Opening Screenshot Picker for Screen Scan', 'info');
+          document.getElementById('screen-screenshot-input').click();
+          return;
+        }
+
+        screenStream = await navigator.mediaDevices.getDisplayMedia({
+          video: { cursor: "always" },
+          audio: false
+        });
+
+        screenVideo.srcObject = screenStream;
+        await screenVideo.play();
+        isScreenScanningActive = true;
+
+        showToast('Screen Scanner Active! Switch to WhatsApp/Photo to scan', 'success');
+        speakMessage("Mobile screen scanner active. Open any QR on your screen.");
+
+        requestAnimationFrame(processScreenFrameLoop);
+
+        screenStream.getVideoTracks()[0].addEventListener('ended', () => {
+          stopMobileScreenScan();
+        });
+
+      } catch (err) {
+        console.warn('Screen share cancelled', err);
+        showToast('Select QR Screenshot from your phone Gallery', 'info');
+        document.getElementById('screen-screenshot-input').click();
+      }
+    }
+
+    function stopMobileScreenScan() {
+      isScreenScanningActive = false;
+      if (screenStream) {
+        screenStream.getTracks().forEach(t => t.stop());
+        screenStream = null;
+      }
+    }
+
+    function processScreenFrameLoop() {
+      if (!isScreenScanningActive || !screenVideo.videoWidth) {
+        if (isScreenScanningActive) requestAnimationFrame(processScreenFrameLoop);
+        return;
+      }
+
+      screenCanvas.width = screenVideo.videoWidth;
+      screenCanvas.height = screenVideo.videoHeight;
+      screenCtx.drawImage(screenVideo, 0, 0, screenCanvas.width, screenCanvas.height);
+
+      const imgData = screenCtx.getImageData(0, 0, screenCanvas.width, screenCanvas.height);
+      if (window.jsQR) {
+        const code = jsQR(imgData.data, imgData.width, imgData.height, {
+          inversionAttempts: "dontInvert"
+        });
+
+        if (code && code.data && code.data.trim() !== '') {
+          stopMobileScreenScan();
+          handleDecodedText(code.data);
+          return;
+        }
+      }
+
+      // No QR on screen: read text on screen and look for links (every ~3s)
+      const nowTs = performance.now();
+      if (!ocrBusy && nowTs - lastOcrAt > 3000) {
+        lastOcrAt = nowTs;
+        ocrBusy = true;
+        scanImageForLinks(screenCanvas).then((found) => {
+          ocrBusy = false;
+          if (found) stopMobileScreenScan();
+        }).catch(() => { ocrBusy = false; });
+      }
+
+      if (isScreenScanningActive) {
+        requestAnimationFrame(processScreenFrameLoop);
+      }
+    }
+  </script>
+
+  <!-- SCREEN SCAN ENGINE -->
+  <script>
+    function triggerScreenScan() {
+      const overlay = document.getElementById('scan-screen-overlay');
+      if (overlay) {
+        overlay.classList.remove('hidden');
+        setTimeout(() => overlay.classList.remove('opacity-0'), 10);
+        if (window.lucide) lucide.createIcons();
+      }
+
+      playSuccessSound();
+      if (navigator.vibrate) navigator.vibrate([40, 60, 40]);
+      speakMessage("Screen scanner active. Scanning your mobile screen.");
+      showToast("Screen Scanner Active ✨", "info");
+
+      // Auto start screen scanner
+      startMobileScreenScan();
+    }
+
+    function closeScanOverlay() {
+      const overlay = document.getElementById('scan-screen-overlay');
+      if (overlay) {
+        overlay.classList.add('opacity-0');
+        setTimeout(() => overlay.classList.add('hidden'), 300);
+      }
+    }
+
+    async function openFloatingPiPScanner() {
+      if ('documentPictureInPicture' in window) {
+        try {
+          const pipWindow = await window.documentPictureInPicture.requestWindow({
+            width: 320,
+            height: 220
+          });
+
+          pipWindow.document.body.innerHTML = `
+            <div style="font-family:'Plus Jakarta Sans',sans-serif;background:#020617;color:white;padding:16px;height:100vh;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:2px solid #818cf8;border-radius:12px;">
+              <div style="font-size:12px;font-weight:800;color:#38bdf8;margin-bottom:4px;display:flex;align-items:center;gap:4px;">
+                <span>✨ TrustScan</span>
+              </div>
+              <p style="font-size:10px;color:#94a3b8;margin:0 0 12px 0;">Floating over WhatsApp & other apps</p>
+              <button id="pip-scan-btn" style="background:linear-gradient(135deg,#38bdf8,#818cf8);color:#020617;font-weight:800;border:none;padding:10px 16px;border-radius:10px;cursor:pointer;font-size:12px;box-shadow:0 4px 12px rgba(99,102,241,0.4);">
+                Scan Screen Now
+              </button>
+            </div>
+          `;
+
+          pipWindow.document.getElementById('pip-scan-btn').onclick = () => {
+            triggerScreenScan();
+          };
+
+          showToast("Floating scanner window opened on top of screen!", "success");
+          speakMessage("Floating scanner opened. Switch to WhatsApp or Gallery.");
+          return;
+        } catch (e) {
+          console.warn("PiP failed", e);
+        }
+      }
+
+      // Fallback
+      triggerScreenScan();
+    }
+  </script>
+
+
+
+  <!-- ADVANCED SECURITY INSPECTOR: JUNK & FAKE BLOCKED, OTHER LINKS OPEN -->
+  <script>
+    let html5QrCode = null;
+    let isCameraRunning = false;
+    let currentScannedTarget = null;
+
+    const PHISHING_PATTERNS = [
+      /paytm.*(cashback|reward|free|bonus|gift|login)/i,
+      /gpay.*(reward|free|bonus|cashback|claim)/i,
+      /phonepe.*(reward|claim|cashback|bonus)/i,
+      /paypal.*(verify|security|update|claim)/i,
+      /free-money/i,
+      /\.xyz$/i, /\.top$/i, /\.buzz$/i, /\.click$/i, /\.tk$/i, /\.ml$/i, /\.ga$/i, /\.cf$/i
+    ];
+
+    const UPI_VPA_REGEX = /^[a-zA-Z0-9.\-_]{2,256}@[a-zA-Z]{2,64}$/;
+
+    async function startCameraScanner() {
+      try {
+        const placeholder = document.getElementById('camera-placeholder');
+
+        if (!html5QrCode) {
+          html5QrCode = new Html5Qrcode("qr-reader");
+        }
+
+        if (isCameraRunning) {
+          await html5QrCode.stop();
+          isCameraRunning = false;
+          placeholder.classList.remove('hidden');
+          return;
+        }
+
+        const config = { fps: 12, qrbox: { width: 250, height: 250 }, aspectRatio: 1.0 };
+
+        await html5QrCode.start(
+          { facingMode: "environment" },
+          config,
+          (decodedText) => handleDecodedText(decodedText),
+          () => {}
+        );
+
+        isCameraRunning = true;
+        placeholder.classList.add('hidden');
+        showToast('Camera Scanner Started', 'info');
+      } catch (err) {
+        console.error("Camera access failed", err);
+        alert("Camera permission denied. Please allow permissions or use Mobile Screen Scan.");
+      }
+    }
+
+    async function handleFileUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      if (!html5QrCode) {
+        html5QrCode = new Html5Qrcode("qr-reader");
+      }
+
+      try {
+        const decodedText = await html5QrCode.scanFile(file, true);
+        handleDecodedText(decodedText);
+      } catch (err) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const img = new Image();
+          img.onload = function() {
+            const canvas = document.createElement('canvas');
+            canvas.width = img.width;
+            canvas.height = img.height;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0);
+            const data = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            if (window.jsQR) {
+              const code = jsQR(data.data, data.width, data.height);
+              if (code && code.data) {
+                handleDecodedText(code.data);
+                return;
+              }
+            }
+            showToast('No QR found. Reading links from the screenshot...', 'info');
+            scanImageForLinks(canvas).then((found) => {
+              if (!found) {
+                showErrorState("No QR code or link found in image or screenshot.", file.name, "Unreadable Image", "Could not detect a valid QR code or link in this screenshot.");
+              }
+            });
+          };
+          img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function inspectSecurityAndRoute(text) {
+      if (!text || typeof text !== 'string') {
+        return {
+          isOpenable: false,
+          isFake: false,
+          isJunk: true,
+          classification: 'Junk Payload',
+          reason: 'Error: Junk / Empty Data Detected!',
+          explanation: 'This QR code contains no readable data. Opening is blocked!'
+        };
+      }
+
+      let trimmed = text.trim();
+
+      // Link without scheme (google.com, www.site.com/page) -> check it as https
+      if (!/^[a-z][a-z0-9+.-]*:/i.test(trimmed) && /^(www\.)?[a-z0-9-]+(\.[a-z0-9-]+)*\.[a-z]{2,}(\/\S*)?$/i.test(trimmed)) {
+        trimmed = 'https://' + trimmed;
+      }
+
+      // 1. Dangerous Executable Script Injection
+      if (/^(javascript|vbscript|data|file|blob):/i.test(trimmed)) {
+        return {
+          isOpenable: false,
+          isFake: true,
+          isJunk: true,
+          classification: 'Malicious Script Attack',
+          reason: 'Error: Dangerous Script Payload Detected!',
+          explanation: 'This QR code attempts to execute unauthorized script commands. Opening is blocked!'
+        };
+      }
+
+      // 3. HTTPS-ONLY RULE: any other scheme (http, upi, mailto, tel, etc.) is blocked
+      if (/^[a-z][a-z0-9+.-]*:/i.test(trimmed) && !/^https:\/\//i.test(trimmed)) {
+        const scheme = trimmed.split(':')[0].toLowerCase();
+        return {
+          isOpenable: false,
+          isFake: false,
+          isJunk: true,
+          classification: 'Non-HTTPS Link (' + scheme + ':)',
+          reason: 'Error: Only https:// links are allowed!',
+          explanation: 'This link uses "' + scheme + ':" which is not secure https. Opening is blocked!'
+        };
+      }
+
+      // 4. Website Links Check (https only)
+      if (/^https:\/\//i.test(trimmed)) {
+        try {
+          const parsed = new URL(trimmed);
+          const host = parsed.hostname.toLowerCase();
+
+          // Trick links: user@fake-host, or punycode lookalike domains
+          if (parsed.username || parsed.password || /(^|\.)xn--/.test(host)) {
+            return {
+              isOpenable: false,
+              isFake: true,
+              isJunk: false,
+              classification: 'Fake / Deceptive Link',
+              reason: `Error: Deceptive Fake Link Detected (${host})!`,
+              explanation: 'This link hides its real destination with a trick. Opening is permanently blocked!'
+            };
+          }
+
+          for (const pattern of PHISHING_PATTERNS) {
+            if (pattern.test(host) || pattern.test(parsed.href)) {
+              return {
+                isOpenable: false,
+                isFake: true,
+                isJunk: false,
+                classification: 'Fake / Phishing Link',
+                reason: `Error: Deceptive Fake Link Detected (${host})!`,
+                explanation: 'This link matches known phishing or fake scam patterns. Opening is permanently blocked!'
+              };
+            }
+          }
+
+          if (/^(\d{1,3}\.){3}\d{1,3}$/.test(host)) {
+            return {
+              isOpenable: false,
+              isFake: true,
+              isJunk: false,
+              classification: 'Suspicious Raw IP Link',
+              reason: 'Error: Fake / Suspicious IP Address Link!',
+              explanation: 'Links pointing to raw numeric IP addresses instead of trusted domain names are blocked.'
+            };
+          }
+
+          return {
+            isOpenable: true,
+            isFake: false,
+            isJunk: false,
+            classification: 'Genuine HTTPS Website Link',
+            destination: host,
+            url: parsed.href
+          };
+
+        } catch (e) {
+          return {
+            isOpenable: false,
+            isFake: false,
+            isJunk: true,
+            classification: 'Malformed Link (Junk)',
+            reason: 'Error: Corrupted / Malformed Link Syntax!',
+            explanation: 'The link structure is broken and cannot be safely opened.'
+          };
+        }
+      }
+
+      // 6. JUNK / RANDOM GIBBERISH DATA
+      return {
+        isOpenable: false,
+        isFake: false,
+        isJunk: true,
+        classification: 'Junk Data / Random Text',
+        reason: 'Error: Junk QR Code Detected!',
+        explanation: 'This QR code contains random gibberish or non-URL junk data. Opening is completely blocked!'
+      };
+    }
+
+    function handleDecodedText(rawText) {
+      closeScanOverlay();
+      const result = inspectSecurityAndRoute(rawText);
+
+      if (result.isOpenable) {
+        currentScannedTarget = result;
+        showSuccessState(result);
+        playSuccessSound();
+
+        speakMessage(`Genuine link verified: ${result.destination}. Opening link now.`);
+        showToast(`Genuine Link Verified: ${result.destination}`, 'success');
+
+        openModal(
+          true,
+          '✅ Genuine Link Verified',
+          `This link is clean, safe, and authentic. Opening link now.`,
+          rawText,
+          result
+        );
+
+        setTimeout(() => {
+          if (result.url && result.url !== '#') {
+            window.open(result.url, '_blank', 'noopener,noreferrer');
+          }
+        }, 1200);
+
+      } else {
+        currentScannedTarget = null;
+        showErrorState(result.reason, rawText, result.classification, result.explanation, result.isFake, result.isJunk);
+        playErrorSound();
+
+        if (result.isFake) {
+          speakMessage("Security Error! Fake link blocked. It will not open.");
+          showToast(result.reason, 'error');
+        } else {
+          speakMessage("Security Error! Junk data blocked. It will not open.");
+          showToast(result.reason, 'error');
+        }
+
+        openModal(
+          false,
+          result.isFake ? '🚨 ERROR: FAKE LINK DETECTED' : '🚨 ERROR: JUNK DATA DETECTED',
+          result.reason,
+          rawText,
+          result
+        );
+      }
+    }
+
+    function showSuccessState(info) {
+      document.getElementById('state-idle').classList.add('hidden');
+      document.getElementById('state-error').classList.add('hidden');
+
+      const successState = document.getElementById('state-success');
+      successState.classList.remove('hidden');
+
+      document.getElementById('side-destination-name').textContent = info.destination;
+      document.getElementById('success-url').textContent = info.url;
+
+      const openBtn = document.getElementById('open-url-btn');
+      openBtn.href = info.url;
+    }
+
+    function showErrorState(reason, rawText, classification, explanation, isFake, isJunk) {
+      document.getElementById('state-idle').classList.add('hidden');
+      document.getElementById('state-success').classList.add('hidden');
+
+      const errorState = document.getElementById('state-error');
+      errorState.classList.remove('hidden');
+
+      const badge = document.getElementById('error-badge-tag');
+      const heading = document.getElementById('error-heading-text');
+
+      badge.textContent = classification;
+      heading.textContent = isFake ? 'Fake Link Error' : (isJunk ? 'Junk Link Error' : 'Blocked Error');
+
+      document.getElementById('error-title').textContent = reason;
+      document.getElementById('error-description').textContent = explanation;
+      document.getElementById('error-payload').textContent = rawText;
+    }
+
+    function openModal(isSuccess, title, message, rawContent, result) {
+      const modal = document.getElementById('message-modal');
+      const modalCard = document.getElementById('modal-card');
+      const iconContainer = document.getElementById('modal-icon-container');
+      const badge = document.getElementById('modal-badge');
+      const actionTag = document.getElementById('modal-action-tag');
+      const titleElem = document.getElementById('modal-title');
+      const msgElem = document.getElementById('modal-message-text');
+      const contentElem = document.getElementById('modal-content-text');
+      const genuineBox = document.getElementById('modal-genuine-box');
+      const errorBox = document.getElementById('modal-error-box');
+      const errorHeading = document.getElementById('modal-error-heading');
+      const errorExp = document.getElementById('modal-error-explanation');
+      const openBtn = document.getElementById('modal-open-btn');
+
+      titleElem.textContent = title;
+      msgElem.textContent = message;
+      contentElem.textContent = rawContent;
+
+      if (isSuccess && result) {
+        modalCard.className = 'bg-slate-900 border border-emerald-500/50 glow-emerald rounded-2xl max-w-lg w-full p-6 shadow-2xl transform scale-100 transition-transform duration-300';
+        iconContainer.className = 'w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-emerald-500/20 border border-emerald-500/40 text-emerald-400';
+        iconContainer.innerHTML = '<i data-lucide="check-circle" class="w-6 h-6"></i>';
+        badge.className = 'px-2.5 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-300 border border-emerald-500/40';
+        badge.textContent = 'Verified Clean';
+
+        actionTag.className = 'px-2.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20';
+        actionTag.textContent = 'Opening Link';
+
+        genuineBox.classList.remove('hidden');
+        errorBox.classList.add('hidden');
+        document.getElementById('genuine-host').textContent = result.destination;
+
+        openBtn.classList.remove('hidden');
+        openBtn.href = result.url;
+      } else {
+        const isFake = result && result.isFake;
+        const isJunk = result && result.isJunk;
+
+        modalCard.className = `bg-slate-900 border ${isFake ? 'border-rose-500/50 glow-rose' : 'border-amber-500/50 glow-amber'} animate-shake rounded-2xl max-w-lg w-full p-6 shadow-2xl transform scale-100 transition-transform duration-300`;
+        iconContainer.className = `w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${isFake ? 'bg-rose-500/20 border border-rose-500/40 text-rose-400' : 'bg-amber-500/20 border border-amber-500/40 text-amber-400'}`;
+        iconContainer.innerHTML = '<i data-lucide="alert-octagon" class="w-6 h-6"></i>';
+        badge.className = `px-2.5 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider ${isFake ? 'bg-rose-500/20 text-rose-300 border border-rose-500/40' : 'bg-amber-500/20 text-amber-300 border border-amber-500/40'}`;
+        badge.textContent = isFake ? 'Fake Link Detected' : (isJunk ? 'Junk Link Detected' : 'Blocked');
+
+        actionTag.className = 'px-2.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-rose-500/10 text-rose-400 border border-rose-500/20';
+        actionTag.textContent = 'Will Not Open';
+
+        genuineBox.classList.add('hidden');
+        errorBox.classList.remove('hidden');
+        errorHeading.textContent = isFake ? 'Fake / Phishing Link Blocked!' : 'Junk / Corrupted Data Blocked!';
+        errorExp.textContent = (result && result.explanation) ? result.explanation : 'This link is fake or junk data. It will NOT open!';
+
+        openBtn.classList.add('hidden');
+      }
+
+      lucide.createIcons();
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+      }, 10);
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('message-modal');
+      modal.classList.add('opacity-0');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 300);
+    }
+
+    function resetScannerResult() {
+      document.getElementById('state-success').classList.add('hidden');
+      document.getElementById('state-error').classList.add('hidden');
+      document.getElementById('state-idle').classList.remove('hidden');
+      currentScannedTarget = null;
+    }
+
+    function testLink(text) {
+      handleDecodedText(text);
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/[&<>"']/g, function(m) {
+        switch (m) {
+          case '&': return '&amp;';
+          case '<': return '&lt;';
+          case '>': return '&gt;';
+          case '"': return '&quot;';
+          case "'": return '&#39;';
+          default: return m;
+        }
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+    });
+  </script>
+
+  <!-- LINK SCANNER (typed / pasted links) -->
+  <script>
+    function scanTypedLink() {
+      const input = document.getElementById('link-scan-input');
+      const value = (input.value || '').trim();
+      if (!value) {
+        showToast('Please paste or type a link first.', 'error');
+        playErrorSound();
+        input.focus();
+        return;
+      }
+      // Bare domain like "google.com" -> treat as https://google.com
+      let link = value;
+      if (!/^[a-z][a-z0-9+.-]*:/i.test(link) && /^[^\s\/]+\.[a-z]{2,}(\/\S*)?$/i.test(link)) {
+        link = 'https://' + link;
+      }
+      // Fake/junk -> error popup, will NOT open. Genuine -> verified and opens.
+      handleDecodedText(link);
+    }
+
+    async function pasteLinkFromClipboard() {
+      const input = document.getElementById('link-scan-input');
+      try {
+        const text = await navigator.clipboard.readText();
+        input.value = (text || '').trim();
+        if (input.value) {
+          scanTypedLink();
+        } else {
+          showToast('Clipboard is empty.', 'error');
+        }
+      } catch (e) {
+        input.focus();
+        showToast('Paste the link manually in the box, then tap Scan Link.', 'info');
+      }
+    }
+  </script>
+
+  <!-- SCREEN LINK READER (OCR): finds links shown as text on screen / screenshots -->
+  <script>
+    let ocrBusy = false;
+    let lastOcrAt = 0;
+    let ocrWorker = null;
+    let ocrToastShown = false;
+
+    function loadTesseract() {
+      return new Promise((resolve, reject) => {
+        if (window.Tesseract) return resolve();
+        const el = document.createElement('script');
+        el.src = 'https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js';
+        el.onload = () => resolve();
+        el.onerror = () => reject(new Error('OCR engine failed to load'));
+        document.head.appendChild(el);
+      });
+    }
+
+    async function getOcrWorker() {
+      if (ocrWorker) return ocrWorker;
+      await loadTesseract();
+      ocrWorker = await Tesseract.createWorker('eng');
+      return ocrWorker;
+    }
+
+    function extractLinksFromText(text) {
+      const found = [];
+      const clean = (u) => u.replace(/[.,;:!?)\]}>'"]+$/, '');
+
+      const schemeRe = /\b(?:https?|upi|phonepe|paytmmp|tez|bhim|javascript|data):(?:\/\/)?[^\s"'<>]+/gi;
+      (text.match(schemeRe) || []).forEach((u) => found.push(clean(u)));
+
+      if (found.length === 0) {
+        const bareRe = /\b(?:[a-z0-9-]+\.)+[a-z]{2,6}(?:\/[^\s"'<>]*)?/gi;
+        const fileExt = /\.(png|jpe?g|gif|webp|pdf|txt|docx?|xlsx?|mp[34]|zip|html?|js|css)$/i;
+        (text.match(bareRe) || []).forEach((u) => {
+          const c = clean(u);
+          if (!fileExt.test(c) && /[a-z]/i.test(c)) found.push('https://' + c);
+        });
+      }
+      return Array.from(new Set(found));
+    }
+
+    // Returns true if at least one link was found and handled.
+    async function scanImageForLinks(source) {
+      try {
+        // Snapshot so the live frame can keep changing while OCR runs
+        const snap = document.createElement('canvas');
+        snap.width = source.width;
+        snap.height = source.height;
+        snap.getContext('2d').drawImage(source, 0, 0);
+
+        if (!ocrToastShown) {
+          showToast('Reading links on your screen...', 'info');
+          ocrToastShown = true;
+        }
+
+        const worker = await getOcrWorker();
+        const { data } = await worker.recognize(snap);
+        const links = extractLinksFromText(data.text || '');
+        if (links.length === 0) return false;
+
+        // If any link on screen is fake/junk -> show error (nothing opens).
+        // Otherwise the first genuine link opens.
+        let blocked = null;
+        let good = null;
+        for (const l of links) {
+          const r = inspectSecurityAndRoute(l);
+          if (!r.isOpenable && !blocked) blocked = l;
+          if (r.isOpenable && !good) good = l;
+        }
+        handleDecodedText(blocked || good);
+        return true;
+      } catch (e) {
+        console.warn('Screen link reader failed', e);
+        if (!ocrToastShown || e.message === 'OCR engine failed to load') {
+          showToast('Link reader needs internet the first time. Use Scan Link box instead.', 'error');
+        }
+        return false;
+      }
+    }
+  </script>
+
+  <!-- TEXT QR MAKER -->
+  <script>
+    let textQrDataUrl = null;
+
+    function generateTextQR() {
+      const text = (document.getElementById('text-qr-input').value || '').trim();
+      const out = document.getElementById('text-qr-output');
+      const dl = document.getElementById('text-qr-download');
+
+      if (!text) {
+        showToast('Type some text first.', 'error');
+        playErrorSound();
+        return;
+      }
+      if (typeof qrcode === 'undefined') {
+        showToast('QR maker could not load. Check your internet and reload.', 'error');
+        return;
+      }
+
+      try {
+        qrcode.stringToBytes = qrcode.stringToBytesFuncs['UTF-8'];
+        const qr = qrcode(0, 'M');
+        qr.addData(text);
+        qr.make();
+        textQrDataUrl = qr.createDataURL(8, 4);
+
+        out.className = 'w-full md:w-48 h-48 shrink-0 rounded-xl bg-white border border-slate-700 flex items-center justify-center p-1.5';
+        out.innerHTML = '<img src="' + textQrDataUrl + '" alt="Text QR code" class="w-full h-full object-contain" style="image-rendering:pixelated">';
+        dl.classList.remove('hidden');
+        showToast('QR code ready!', 'success');
+        playSuccessSound();
+      } catch (e) {
+        showToast('Text is too long for a QR code.', 'error');
+        playErrorSound();
+      }
+    }
+
+    function downloadTextQR() {
+      if (!textQrDataUrl) return;
+      const a = document.createElement('a');
+      a.href = textQrDataUrl;
+      a.download = 'text-qr.png';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    }
+  </script>
+
+  <!-- HACKER MATRIX BACKGROUND SCRIPT -->
+  <script>
+    (function () {
+      const canvas = document.getElementById('matrix-bg');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const chars = '01アイウエオカキクケコサシスセソ{}<>/$#@%&*+=';
+      const size = 16;
+      let cols, drops, timer = null;
+
+      function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        cols = Math.ceil(canvas.width / size);
+        drops = Array.from({ length: cols }, () => Math.random() * -50);
+        ctx.fillStyle = '#020617';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+      }
+
+      function draw() {
+        ctx.fillStyle = 'rgba(2, 6, 23, 0.09)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#22c55e';
+        ctx.font = size + 'px "JetBrains Mono", monospace';
+        for (let i = 0; i < cols; i++) {
+          const ch = chars[Math.floor(Math.random() * chars.length)];
+          ctx.fillStyle = '#22c55e';
+          ctx.fillText(ch, i * size, (drops[i] - 1) * size);
+          ctx.fillStyle = '#d1fae5';
+          ctx.fillText(ch, i * size, drops[i] * size);
+          if (drops[i] * size > canvas.height && Math.random() > 0.975) drops[i] = 0;
+          drops[i]++;
+        }
+      }
+
+      function start() { if (!timer) timer = setInterval(draw, 60); }
+      function stop() { clearInterval(timer); timer = null; }
+
+      resize();
+      window.addEventListener('resize', resize);
+      document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { draw(); } else { start(); }
+    })();
+  </script>
+</body>
+</html>
